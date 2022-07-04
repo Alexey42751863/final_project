@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+.filter{
+    width: 150px;
+}
+
+.filter button{
+    width: 150px;
+    padding: 5px 10px;
+}
+
+.dropDown{
+    display: none;
+    /* clip-path: polygon(0 0, 100%  0, 100% 0, 0 0); */
+}
+
+.dropDown.active{
+    display: flex;
+    flex-direction: column;    
+    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, .10);    
+    position:absolute;
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+}
+
+.dropDown input{
+    width: 150px;
+    border: none;
+    border-bottom: 1px solid blue;
+    padding: 5px 10px;
+}
+
+.dropDown div{    
+    background-color:rgba(255, 255, 255, .8);    
+    padding: 5px 10px;
+}
+
+.dropDown div:hover{    
+    background-color:rgb(207, 229, 243);  
+    cursor: pointer;  
+}
+
+.dropDown .active{    
+    background-color:rgb(221, 221, 221);
+}
