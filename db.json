@@ -1,0 +1,68 @@
+{
+  "cars":[
+    { 
+      "id": "2736436",
+      "mark": "Toyota", 
+      "model": "Prius",
+      "date": "2010",
+      "city": "Հայաստան, Երևան", 
+      "clearance": "true",
+      "mileage": "136000",
+      "car body": "Սեդան",
+      "gearbox": "Ավտոմատ", 
+      "steering wheel": "Ձախ",
+      "mator": "Հիբրիդ",
+      "color": "Արծաթագույն",
+      "mator value": "1.8",
+      "tug": "Առջևի",
+      "options": "ABS, Բորտ-համակարգիչ, Հայելիների տաքացում, Տաքացվող նստատեղեր, Էլեկտրակառավարվող հայելիներ, Անձրևի սենսոր, Լույսի սենսոր, Կրուիզ-կոնտրոլ, Քսենոնային լուսարձակներ, Լեդ լուսարձակներ, Կենտրոնական փական, Ղեկի կարգավորում, Ալյումինե սկավառակներ, Լյուկ, Պանորամային լյուկ, Ետևի տեսադաշտի տեսախցիկ, CD/MP3, DVD, CD-չեյնջեր, Անվտանգության բարձիկներ, Դիմացի նստատեղերի էլ․կարգավորում, Կաշեպատ սրահ, Մգեցված ապակիներ, Կոնդիցիոներ, Կլիմատ-կոնտրոլ, Էլեկտրակառավարվող ղեկ, Հիդրավլիկ ղեկ, Էլեկտրակառավարվող ապակիներ, Ձայնամեկուսացում",
+      "additional": "Nor akkumliator Gibrit entir vichakum .Luk. Krishyn texadrvace batarei vor e aranc kondicioner miacnele hovacnyme srahe. Mec monitor kamera tagacvox nstaranner. Plonyi full komplektaciya.gaz53 lt.Mi zapravkov gshvyma 820 km PAKOVI CHKA",
+      "imgUrls": [
+        "https://auto.am/static/offers/2736436/5b68b4349b2417c7e5c7e891cc944297.jpg",
+        "https://auto.am/static/offers/2736436/bbce1f1aeeba34cc71d5ae17db4a7b86.jpg",
+        "https://auto.am/static/offers/2736436/98e859c249f401103664dab87a3a30d3.jpg",
+        "https://auto.am/static/offers/2736436/47b477b2e587a559feed0b45a15a7466.jpg",
+        "https://auto.am/static/offers/2736436/2102f7be2c1d9f868c5b68c6afbd8c08.jpg",
+        "https://auto.am/static/offers/2736436/879032dbe7ef7b5cc16202ff547d7dcd.jpg",
+        "https://auto.am/static/offers/2736436/a4762a2bbdc00246def14e7eb2894770.jpg",
+        "https://auto.am/static/offers/2736436/bf79d08636b8dfb918a5d865532bd95b.jpg"
+      ],
+      "priceDram": "4 313 470",
+      "priceRubli": "604 127",
+      "priceDolor": "9 800",
+      "priceEuro": "9 127"
+    },
+    { 
+      "id": "2789853",
+      "mark": "Toyota", 
+      "model": "Camry",
+      "date": "2016",
+      "city": "Հայաստան", 
+      "clearance": "true",
+      "mileage": "150000",
+      "modification": "2.5",
+      "car body": "Սեդան",
+      "gearbox": "Ավտոմատ", 
+      "steering wheel": "Ձախ",
+      "mator": "գազ",
+      "color": "սև",
+      "additional": "gaz 1.4 balon vazqy original",
+      "imgUrls": [
+        "https://auto.am/static/offers/2789853/392eef0605e242d29dee0d9642f10cd3.jpg",
+        "https://auto.am/static/offers/2789853/43a6939477349c143cdf923087e892b7.jpg",
+        "https://auto.am/static/offers/2789853/27cd3fee67bb2a4df13720464e444751.jpg",
+        "https://auto.am/static/offers/2789853/4055e0de479540260feb587dd439a05c.jpg",
+        "https://auto.am/static/offers/2789853/333cd04ce94bcd20dbec3f260b02957f.jpg",
+        "https://auto.am/static/offers/2789853/cc849d717326ba29f9f49765aa896392.jpg",
+        "https://auto.am/static/offers/2789853/3906d50fc846d9cfd5102690ba8adcf7.jpg",
+        "https://auto.am/static/offers/2789853/a759546f21c49cd81585d10ca1cda36a.jpg",
+        "https://auto.am/static/offers/2789853/5affc319d50adcda2d859c6f259120a1.jpg"
+      ],
+      "priceDram": "7 139 125",
+      "priceRubli": "956 987",
+      "priceDolor": "17 500",
+      "priceEuro": "16 744"
+    }
+  ]
+}
+
