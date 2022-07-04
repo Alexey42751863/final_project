@@ -1,3 +1,3 @@
 import Home from "./Home";
-import './home.css'
+import './Home.css'
 export default Home
