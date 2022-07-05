@@ -1,0 +1,181 @@
+.DetailsPage .container{
+    max-width: 1260px;
+    min-width: 980px;
+    width: 80%;
+    margin: 0 auto;
+}
+.DetailsPage .container .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 105px;
+}
+.DetailsPage .container .title .mainInfo{
+    width: 50%;
+}
+.DetailsPage .container .title .mainInfo .modelYear{
+    display: flex;
+    align-items: center;
+}
+.DetailsPage .container .title .mainInfo .modelYear .moYe{
+    margin-right: 2%;
+}
+.DetailsPage .container .title .mainInfo .modelYear i{
+    padding: 5px;
+    font-size: 24px;
+    line-height: 1;
+    color: #1172b6;
+}
+.DetailsPage .container .title .mainInfo .modelYear .year{
+    font-size: 34px;
+    color:#727272;
+    font-weight: 400;
+}
+.DetailsPage .container .title .mainInfo .modelYear .car{
+    color: #1172b6;
+    font-size: 34px;
+}
+.DetailsPage .container .title .mainInfo .addInfo{
+    display: flex;
+    padding: 3px 0 0 44px;
+    font-size: 15px;
+    line-height: 1.5;
+    align-items: center;
+}
+.DetailsPage .container .title .mainInfo .addInfo .postDate{
+    font-size: 15px;
+    color: #727272;
+    padding-right: 6px;
+    margin-right: 2px;
+}
+.DetailsPage .container .title .mainInfo .addInfo .city{
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-left: 2px;
+    padding-right: 6px;
+    margin-right: 2px;
+    color: #1172b6;
+}
+.DetailsPage .container .title .mainInfo .addInfo .customs{
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-left: 2px;
+    color: #4CAF50;
+}
+.DetailsPage .container .title .price{
+    font-size: 34px;
+    line-height: 1.5;
+    color: rgba(0,0,0,0.87)
+}
+.DetailsPage .container .navBar{
+    display: flex;
+    gap: 24px;
+    font-size: 16px;
+    margin-bottom: 0.3vw;
+}
+.DetailsPage .container .navBar .id{
+    color: rgba(255, 82, 82, 0.95);
+    border-bottom: 2px solid rgba(255, 82, 82, 0.45);
+}
+.DetailsPage .container .navBar .insurance{
+    color: #212121;
+}
+.DetailsPage .container .navBar .credit{
+    color: #004750;
+}
+.DetailsPage .container .mainContent{
+    display: flex;
+    gap: 2%;
+}
+.DetailsPage .container .mainContent .mainContentImg{
+    width: 38.8vw;
+}
+.DetailsPage .container .mainContent .mainContentImg .mainImg{
+    height: 27.6vw;
+}
+.DetailsPage .container .mainContent .mainContentImg .mainImg img{
+    width: 100%;
+    height:100%;
+}
+.DetailsPage .container .mainContent .mainContentImg .thumbs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3vw;
+}
+.DetailsPage .container .mainContent .mainContentImg .thumbs img{
+    width: 7.17vw;
+    height: 5.38vw;
+    margin-top: 0.3vw;
+}
+.DetailsPage .container .mainContent .mainContentInfo{
+    width: 25.4vw;
+}
+.DetailsPage .container .mainContent .mainContentInfo .quickSale{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: #FFC107;
+    border-radius: 4px;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 0.3vw;
+    font-size: 15px;
+}
+.DetailsPage .container .mainContent .mainContentInfo .shareFeedback{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.DetailsPage .container .mainContent .mainContentInfo .shareFeedback div{
+    font-size: 15px;
+    padding: 7px;
+    text-align: center;
+    width: 50%;
+    background: #EFEFEF;
+    color: #727272;
+    border-radius: 4px;
+}
+.DetailsPage .container .mainContent .mainContentInfo .shareFeedback .share{
+    margin-right: .3vw;
+}
+.DetailsPage .container .mainContent .mainContentInfo .carinfo .rows{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+    border-radius: 2px;
+    border-bottom: 1px solid #EFEFEF;
+}
+.DetailsPage .container .mainContent .mainContentInfo .carinfo .add{
+    display: inline-block;
+}
+.DetailsPage .container .contact{
+    display: flex;
+    height: 128px;
+    width:38.8vw;
+    padding: 12px 12px 0 12px;
+    background: #e8ebf0;
+    justify-content: space-between;
+}
+.DetailsPage .container .contact .user{
+    color: #8695a4;
+    border-radius: 50%;
+}
+.DetailsPage .container .contact .user i{
+    font-size: 120px;
+    margin: -8px;
+    color: #8695a4;
+}
+
+.DetailsPage .container .contact .call{
+    padding: 0 0 0 12px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 12px;
+    font-size: 13px;
+    width: 48%;
+}
