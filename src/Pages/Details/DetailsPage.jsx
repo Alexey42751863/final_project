@@ -47,7 +47,7 @@ const DetailsPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="price" onMouseOver={mouseOver} onMouseLeave={mouseOut}>
+                    <div className="price">
                         {car.priceDolor} $
                     </div>
                 </div>
