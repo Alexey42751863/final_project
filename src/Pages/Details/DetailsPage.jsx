@@ -1,10 +1,14 @@
 import React ,{useState,useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-
-const DetailsPage = ({cars}) => {
+import { useParams,useNavigate } from 'react-router-dom';
+import {BsArrowsFullscreen ,BsFillShareFill,BsHeartFill,BsFillTelephoneFill} from 'react-icons/bs';
+import {HiOutlineBan} from 'react-icons/hi';
+import {FiChevronLeft,FiChevronRight,FiMessageSquare} from 'react-icons/fi';
+import {FaUserCircle} from 'react-icons/fa';
+const DetailsPage = () => {
 
     const [car, setCar] = useState({});
     const {id}=useParams();
+    const navigate= useNavigate();
 
     const getCarById=async(id)=>{
         const response = await fetch('http://localhost:3000/cars/' + id);
@@ -14,14 +18,15 @@ const DetailsPage = ({cars}) => {
         getCarById(id).then(data=>{
           setCar(data);
         });
-      }, [id]);
+      }, []);
+      
     return (
         <div className='DetailsPage'>
             <div className="container">
                 <div className="title">
                     <div className="mainInfo">
                         <div className="modelYear">
-                            <i className="fa-solid fa-arrow-left-long"></i>
+                            <i className="fa-solid fa-arrow-left-long" onClick={()=>navigate(-1)}></i>
                             <div className='moYe year'>{car.date}</div> 
                             <div className="moYe car mark">
                                 {car.mark}
@@ -42,7 +47,7 @@ const DetailsPage = ({cars}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="price">
+                    <div className="price" onMouseOver={mouseOver} onMouseLeave={mouseOut}>
                         {car.priceDolor} $
                     </div>
                 </div>
@@ -61,6 +66,11 @@ const DetailsPage = ({cars}) => {
                     <div className="mainContentImg">
                         {
                             car.imgUrls?<div className="mainImg">
+                                <i className='icon left'><FiChevronLeft/></i>
+                                <i className='icon right'><FiChevronRight/></i>
+                                <i className='react heart'><BsHeartFill/></i>
+                                <i className="react icon fullscr"><BsArrowsFullscreen/></i>
+                                <div className='imgNum'></div>
                             <img src={car.imgUrls[0]} alt="" />
                         </div>:<img src='' alt='no photo'/>
                         }
@@ -69,14 +79,29 @@ const DetailsPage = ({cars}) => {
                            <img src={img} alt=''/>
                             ))}</div>:<img src='' alt='no photo'/>
                         }
+                        <div className="contact">
+                            <div className="user">
+                                <i className="userIcon"><FaUserCircle/></i>
+                            </div>
+                            <div className="call"> 
+                                <i className='phone'><BsFillTelephoneFill/></i>    Զանգահարել
+                            </div>
+                            <div className="message">
+                               <i className="write"><FiMessageSquare/></i> Գրել
+                            </div>
+                        </div>
                     </div>
                     <div className="mainContentInfo">
                         <div className='quickSale'>
-                            Արագ վաճառք 
+                        <i className="fa-solid fa-arrow-trend-up"></i>   Արագ վաճառք 
                         </div>
                         <div className='shareFeedback'>
-                            <div className='share'> <i></i> Տարածել</div>
-                            <div><i></i> Բողոքել</div>
+                            <div className='share'> 
+                            <i className="share"><BsFillShareFill/></i>  Տարածել
+                            </div>
+                            <div>
+                            <i className="ban"><HiOutlineBan/></i>  Բողոքել
+                            </div>
                         </div>
                         <div className='carinfo'>
                             <div className="rows">
@@ -128,13 +153,6 @@ const DetailsPage = ({cars}) => {
                     <div className="someContent">
                             Այստեղ կարող է լինել ձեր գովազդը
                         </div>
-                </div>
-                <div className="contact">
-                    <div className="user">
-                        <i className="fa-solid fa-user"></i>
-                    </div>
-                    <div className="call"> call</div>
-                    <div className="message">message</div>
                 </div>
             </div>
         </div>
