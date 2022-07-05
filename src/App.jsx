@@ -2,7 +2,7 @@ import React from 'react'
 import {Routes, Route} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Navbar from './Components/Navbar'
+import Header from './Components/Header'
 import Advertising from './Pages/Advertising'
 import BeADealer from './Pages/BeADealer'
 import Contact from './Pages/Contact'
@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Navbar/>
+      <Header />
       <Routes>
         <Route path ='/' element={<Home />} />
         <Route path ='/dealers' element={<Dealers />} />
