@@ -1,15 +1,21 @@
 import React from 'react'
 import "./header.css";
 import Navbar from '../Navbar'
+import { useEffect } from "react";
 const Header = () => {
   return (
      <div className='header'>
-        <Navbar/>
-        <h2><a href="">avto.am</a></h2>
+      <div className="menu">
+      <Navbar/>
+      <a href=""><span>avto</span>.am</a>
+      </div>
+        
+      
         <div className='diler'>
           <i className="fa-solid fa-car"></i>
-          <i className="fa-solid fa-memo"></i>
-          <button>Վաճառել</button>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-circle-user"></i>
+          <button className = "btn">Վաճառել</button>
         </div>
     </div>
    

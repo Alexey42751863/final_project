@@ -16,7 +16,7 @@ const App = () => {
   const [cars, setCars] = useState([])
 
   const loadCars = async() => {
-    const result = await axios.get('http://localhost:3000/cars')
+    const result = await axios.get('http://localhost:3001/cars')
     setCars(result.data);
   }
 
