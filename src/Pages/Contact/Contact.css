@@ -1,0 +1,87 @@
+.contact{
+    display: flex;
+}
+
+.contact_item{
+    margin: 0 auto;
+    display: flex;
+}
+
+.text1{
+    max-width: 630px;
+    font-size: 20px;
+}
+
+.text1 span{
+    font-weight: bold;
+    color: #000;
+}
+
+p a{
+    text-decoration: none;
+    color: #1172b6;
+}
+
+.form{
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form select{
+    padding: 10px;
+    width: 400px;
+    border: 1px solid #efefef;
+    color: lightslategray;
+    border-radius: 5px;
+}
+
+.form select:hover{
+    cursor: pointer;
+    border: 1px solid lightslategray;
+}
+
+.email{
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#email{
+    padding: 10px;
+    border: 1px solid #efefef;
+    color: lightslategray;
+    border-radius: 5px;
+}
+
+.textarea{
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    color: #636363;
+    font-size: 15px;
+}
+
+textarea{
+    resize: none;
+    border: 1px solid #efefef;
+    color: lightslategray;
+    border-radius: 5px;
+    padding: 30px 0;
+}
+
+.send{
+    margin-top: 20px;
+    max-width: 150px;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background-color: #1172b6;
+    color: #fff;
+    cursor: pointer;
+}

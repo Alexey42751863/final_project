@@ -1,3 +1,3 @@
 import Navbar from "./Navbar";
-import './navbar.css'
+import './Navbar.css'
 export default Navbar
