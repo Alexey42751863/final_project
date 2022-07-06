@@ -5,7 +5,7 @@
 }
 
 
-.filter-bar .container{
+.filter-bar .filter-container{
     height: 35px;
     display: flex;
     align-items: center;
