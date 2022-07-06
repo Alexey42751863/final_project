@@ -1,0 +1,68 @@
+.TitlePage{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 105px;
+}
+.TitlePage .mainInfo{
+    width: 50%;
+}
+.TitlePage .mainInfo .modelYear{
+    display: flex;
+    align-items: center;
+}
+.TitlePage .mainInfo .modelYear .moYe{
+    margin-right: 2%;
+    cursor: pointer;
+}
+.TitlePage .mainInfo .modelYear .car:hover{
+    color: #FF5C5C;
+}
+.TitlePage .mainInfo .modelYear i{
+    padding: 5px;
+    font-size: 24px;
+    line-height: 1;
+    color: #1172b6;
+    cursor: pointer;
+}
+.TitlePage .mainInfo .modelYear .year{
+    font-size: 34px;
+    color:#727272;
+    font-weight: 400;
+}
+.TitlePage .mainInfo .modelYear .car{
+    color: #1172b6;
+    font-size: 34px;
+}
+.TitlePage .mainInfo .addInfo{
+    display: flex;
+    padding: 3px 0 0 44px;
+    font-size: 15px;
+    line-height: 1.5;
+    align-items: center;
+}
+.TitlePage .mainInfo .addInfo .postDate{
+    font-size: 15px;
+    color: #727272;
+    padding-right: 6px;
+    margin-right: 2px;
+}
+.TitlePage .mainInfo .addInfo .city{
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-left: 2px;
+    padding-right: 6px;
+    margin-right: 2px;
+    color: #1172b6;
+}
+.TitlePage .mainInfo .addInfo .customs{
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-left: 2px;
+    color: #4CAF50;
+}
+.TitlePage .price{
+    font-size: 34px;
+    line-height: 1.5;
+    color: rgba(0,0,0,0.87)
+}

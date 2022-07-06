@@ -1,0 +1,124 @@
+.ImgPage .contact {
+    display: flex;
+    height: 128px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 12px 0 12px;
+    background: #e8ebf0;
+    justify-content: space-between;
+}
+
+.ImgPage .contact .user {
+    color: #8695a4;
+}
+
+.ImgPage .contact .user i {
+    font-size: 110px;
+    color: #8695a4;
+}
+
+.ImgPage .contact .call {
+    padding: 0 0 0 12px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 12px;
+    font-size: 13px;
+    width: 48%;
+    color: #f9f9f9;
+    height: auto;
+    height: 39px;
+    line-height: 2.6rem;
+    cursor: pointer;
+    background-color: #1172b6;
+    border-radius: 4px;
+}
+
+.ImgPage .contact .message {
+    padding: 0 0 0 12px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 12px;
+    font-size: 13px;
+    width: 48%;
+    color: #f9f9f9;
+    height: auto;
+    height: 39px;
+    line-height: 2.6rem;
+    cursor: pointer;
+    background-color: #1172b6;
+    border-radius: 4px;
+}
+
+.ImgPage {
+    width: 38.8vw;
+}
+
+.ImgPage .mainImg {
+    height: 27.6vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.ImgPage .mainImg .heart {
+    font-size: 27px;
+    color: #fff;
+    opacity: .5;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+}
+
+.ImgPage .mainImg .icon {
+    font-size: 44px;
+    color: #eee;
+    position: absolute;
+}
+
+.ImgPage .mainImg .left {
+    top: 50%;
+    left: 0;
+}
+
+.ImgPage .mainImg .right {
+    top: 50%;
+    right: 0;
+}
+
+.ImgPage .mainImg .fullscr {
+    bottom: 0;
+    right: 5px;
+    opacity: 0;
+}
+
+.ImgPage .mainImg img {
+    max-width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.ImgPage .mainImg:hover .react {
+    opacity: 1;
+}
+
+.ImgPage .mainImg .icon:hover {
+    color: rgba(255, 82, 82, 0.95);
+}
+
+.ImgPage .mainImg .react:hover {
+    color: rgba(255, 82, 82, 0.95);
+}
+
+.ImgPage .thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3vw;
+}
+
+.ImgPage .thumbs img {
+    max-width: 7.17vw;
+    max-height: 5.38vw;
+    width: 19.3%;
+    margin-top: 0.3vw;
+    cursor: pointer;
+}

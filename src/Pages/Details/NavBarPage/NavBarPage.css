@@ -1,0 +1,31 @@
+.NavBarPage{
+    display: flex;
+    gap: 24px;
+    font-size: 16px;
+    margin-bottom: 0.3vw;
+}
+.NavBarPage .id{
+    color: rgba(255, 82, 82, 0.95);
+    border-bottom: 2px solid rgba(255, 82, 82, 0.45);
+    cursor: pointer;
+}
+.NavBarPage .insurance{
+    color: #212121;
+    cursor: pointer;
+}
+.NavBarPage .insurance:hover{
+    color: rgba(255, 82, 82, 0.95);
+    border-bottom: 2px solid rgba(255, 82, 82, 0.45);
+}
+.NavBarPage .credit{
+    color: #004750;
+    cursor: pointer;
+}
+.NavBarPage .credit:hover{
+    color: rgba(255, 82, 82, 0.95);
+    border-bottom: 2px solid rgba(255, 82, 82, 0.45);
+}
+.mainContent{
+    display: flex;
+    gap: 2%;
+}

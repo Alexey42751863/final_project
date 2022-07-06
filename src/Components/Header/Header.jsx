@@ -1,7 +1,8 @@
 import React from 'react'
 import "./header.css";
 import Navbar from '../Navbar'
-import { useEffect } from "react";
+
+
 const Header = () => {
   return (
      <div className='header'>

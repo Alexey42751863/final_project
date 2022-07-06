@@ -11,6 +11,7 @@ import Help from './Pages/Help'
 import Home from './Pages/Home'
 import TermsOfUse from './Pages/TermsOfUse'
 import Footer from './Components/Footer'
+import DetailsPage from './Pages/Details'
 
 const App = () => {
 
@@ -48,6 +49,7 @@ const App = () => {
           <Route path='/terms_of_use' element={<TermsOfUse />} />
           <Route path='/help' element={<Help />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/detail/:id' element={<DetailsPage />} />
         </Routes>
       </div>
       <Footer />
