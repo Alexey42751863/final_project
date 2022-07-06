@@ -1,0 +1,25 @@
+.filter-bar{
+    display: flex;
+    justify-content: space-around;
+    margin: 100px auto 500px;
+    max-width: 1200px;
+}
+
+
+.filter-bar .filter-container{
+    height: 42px;
+    display: flex;
+    align-items: center;
+    /* border-radius: .3rem; */
+    overflow :hidden;
+    /* border:1px solid #E8EBF0; */
+    padding: 0px;
+}
+
+.filter-bar .double .filter:first-child{
+    border-radius: 4px 0 0 4px;
+}
+
+.filter-bar .double .filter:last-child{
+    border-radius:  0 4px 4px 0;
+}
