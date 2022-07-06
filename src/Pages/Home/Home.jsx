@@ -21,17 +21,17 @@ const Home = ({handleSelect}) => {
 
   return (
     <div className='filter-bar'>
-      <div className='container'>
+      <div className='filter-container'>
         <Filter title={'Մակնիշը'} id={'mark'} options={['Mercedes', 'Toyota', 'Nissan', 'BMW', 'Hyundai']} handleSelect={handleSelect} setModel={setModel}/>
       </div>
-      <div className='container'>
+      <div className='filter-container'>
         <FilterModel title={'Մոդելը'} id={'model'} options={options}  />
       </div>
-      <div className='container'>
+      <div className='filter-container'>
         <Filter title={'Տարին, սկս.'} id={'dateOfStart'} options={genOptions(1980, 2022)} handleSelect={handleSelect}/>
         <Filter title={'մինչև'} id={'dateOfEnd'} options={genOptions(1980, 2022)} handleSelect={handleSelect}/>
       </div>
-      <div className='container'>
+      <div className='filter-container'>
         <Filter title={'Գինե սկս.'} options={genOptions(1000, 100000, 1000).map(el => el = '$' + el)} handleSelect={handleSelect}/>
         <Filter title={'մինչև'} options={genOptions(1000, 100000, 1000).map(el => el = '$' + el)} handleSelect={handleSelect}/>
       </div>
