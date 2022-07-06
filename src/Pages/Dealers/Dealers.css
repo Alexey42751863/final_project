@@ -1,4 +1,4 @@
-.container{
+.dealers-container{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -6,11 +6,11 @@
     cursor: pointer;
 }
 
-.container a{
+.dealers-container a{
     text-decoration: none;
 }
 
-.container h1{
+.dealers-container h1{
     font-weight: normal;
 }
 

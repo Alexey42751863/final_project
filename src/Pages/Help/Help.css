@@ -26,6 +26,7 @@ h3{
     border-bottom: 1px solid #EEE;
     position: relative;
     left: -15px;
+    align-items: center;
 }
 
 .element a{

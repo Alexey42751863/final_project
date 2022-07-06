@@ -3,7 +3,7 @@ import './Dealers.css'
 
 const Dealers = () => {
   return (
-    <div className='container'>
+    <div className='dealers-container'>
         <h1>Ունիվերսալ դիլերներ</h1>
         <div className="gallery">
             <div className='box'>
