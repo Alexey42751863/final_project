@@ -1,3 +1,3 @@
 import MainContentInfo from './MainContentInfo';
-import './MainContentInfo.css';
+import './mainContentInfo.css';
 export default MainContentInfo;

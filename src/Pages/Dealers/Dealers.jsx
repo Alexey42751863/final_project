@@ -1,5 +1,5 @@
 import React from 'react'
-import './Dealers.css'
+import './dealers.css'
 
 const Dealers = () => {
   return (

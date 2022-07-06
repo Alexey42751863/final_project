@@ -1,3 +1,3 @@
 import NavBarPage from './NavBarPage';
-import './NavBarPage.css';
+import './navBarPage.css';
 export default NavBarPage;

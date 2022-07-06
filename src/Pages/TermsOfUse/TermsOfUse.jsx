@@ -1,5 +1,5 @@
 import React from 'react'
-import './TermsOfUse.css'
+import './termsOfUse.css'
 
 const TermsOfUse = () => {
   return (

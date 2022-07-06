@@ -1,3 +1,3 @@
 import DetailsPage from "./DetailsPage";
-import './DetailsPage.css';
+import './detailsPage.css';
 export default DetailsPage;
