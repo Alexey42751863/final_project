@@ -14,23 +14,32 @@ import TermsOfUse from './Pages/TermsOfUse'
 const App = () => {
 
   const [cars, setCars] = useState([])
+  const [filteredCars, setFilteredCars] = useState([])
+
+  useEffect(() => {
+    loadCars()
+  }, [])
 
   const loadCars = async() => {
     const result = await axios.get('http://localhost:3000/cars')
     setCars(result.data);
   }
 
-  useEffect(() => {
-    loadCars()
-  }, [])
+  const handleSelect = (e) => {
+    setFilteredCars(cars.filter(el => el[e.target.id] === e.target.outerText))
+    return new Set(filteredCars.map(el => el.model))
+    
+  }
 
-  console.log(cars);
+
+
+  // console.log(cars);
 
   return (
     <div className='App'>
       <Header />
       <Routes>
-        <Route path ='/' element={<Home />} />
+        <Route path ='/' element={<Home handleSelect={handleSelect} />} />
         <Route path ='/dealers' element={<Dealers />} />
         <Route path = '/be_a_dealer' element={<BeADealer/>} />  
         <Route path = '/advertising' element={<Advertising/>} /> 

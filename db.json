@@ -3032,7 +3032,7 @@
     { 
       "id": "1",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 200",
+      "model": "E 200",
       "date": "2010",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3061,7 +3061,7 @@
     { 
       "id": "2",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 240",
+      "model": "E 240",
       "date": "1999",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3092,7 +3092,7 @@
     { 
       "id": "3",
       "mark": "Mercedes", 
-      "model": " Mercedes-Benz CLS 500",
+      "model": " CLS 500",
       "date": "2005",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3123,7 +3123,7 @@
     { 
       "id": "4",
       "mark": "Mercedes", 
-      "model": "  Mercedes-Benz E 350",
+      "model": "z E 350",
       "date": "2007",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3154,7 +3154,7 @@
     { 
       "id": "5",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 230",
+      "model": "C 230",
       "date": "1998",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3186,7 +3186,7 @@
     { 
       "id": "6",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz S 63 AMG Coupe",
+      "model": "S 63 AMG Coupe",
       "date": "2015",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3217,7 +3217,7 @@
     { 
       "id": "7",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz G 63 AMG",
+      "model": "G 63 AMG",
       "date": "2020",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3248,7 +3248,7 @@
     { 
       "id": "8",
       "mark": "Mercedes", 
-      "model": " Mercedes-Benz S 500",
+      "model": " S 500",
       "date": "2010",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3281,7 +3281,7 @@
     { 
       "id": "9",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz GLE 43 AMG",
+      "model": "GLE 43 AMG",
       "date": "2010",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3311,7 +3311,7 @@
     { 
       "id": "10",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 320",
+      "model": "E 320",
       "date": "2002",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3343,7 +3343,7 @@
     { 
       "id": "11",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 350",
+      "model": "E 350",
       "date": "2008",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3372,7 +3372,7 @@
     { 
       "id": "12",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz S 550",
+      "model": "S 550",
       "date": "2006",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3402,7 +3402,7 @@
     { 
       "id": "13",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2011",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3431,7 +3431,7 @@
     { 
       "id": "14",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 320",
+      "model": "E 320",
       "date": "2004",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3459,7 +3459,7 @@
     { 
       "id": "15",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz SLC 300",
+      "model": "SLC 300",
       "date": "2020",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3487,7 +3487,7 @@
     { 
       "id": "16",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz GLE 350",
+      "model": "GLE 350",
       "date": "2018",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3515,7 +3515,7 @@
     { 
       "id": "17",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2020",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3542,7 +3542,7 @@
     { 
       "id": "19",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz CLA",
+      "model": "CLA",
       "date": " 2013",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3569,7 +3569,7 @@
     { 
       "id": "20",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": " 2013",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3597,7 +3597,7 @@
     { 
       "id": "21",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": " 2018",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3623,7 +3623,7 @@
     { 
       "id": "22",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": " 2016",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3649,7 +3649,7 @@
     { 
       "id": "23",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz 124",
+      "model": "124",
       "date": "1994",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3677,7 +3677,7 @@
     { 
     "id": "24",
     "mark": "Mercedes", 
-    "model": "Mercedes-Benz C 300",
+    "model": "C 300",
     "date": "2017",
     "city": "Հայաստան, Երևան", 
     "clearance": "false",
@@ -3704,7 +3704,7 @@
     { 
       "id": "25",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2017",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3732,7 +3732,7 @@
     { 
         "id": "26",
         "mark": "Mercedes", 
-        "model": "Mercedes-Benz C 240",
+        "model": "C 240",
         "date": "2004",
         "city": "Հայաստան, Երևան", 
         "clearance": "true",
@@ -3761,7 +3761,7 @@
     { 
           "id": "27",
           "mark": "Mercedes", 
-          "model": "Mercedes-Benz CLK 320",
+          "model": "CLK 320",
           "date": "2003",
           "city": "Հայաստան, Երևան", 
           "clearance": "true",
@@ -3788,7 +3788,7 @@
     { 
      "id": "28",
      "mark": "Mercedes", 
-     "model": "Mercedes-Benz C 300",
+     "model": "C 300",
      "date": "2018",
      "city": "Հայաստան, Երևան", 
      "clearance": "false",
@@ -3816,7 +3816,7 @@
     { 
      "id": "29",
      "mark": "Mercedes", 
-     "model": "Mercedes-Benz C 300",
+     "model": "C 300",
      "date": "2018",
      "city": "Հայաստան, Երևան", 
      "clearance": "false",
@@ -3842,7 +3842,7 @@
      { 
       "id": "30",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz S 350",
+      "model": "S 350",
       "date": "2006",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3870,7 +3870,7 @@
     { 
       "id": "31",
       "mark": "Mercedes", 
-      "model": " Mercedes-Benz GLA 250",
+      "model": " GLA 250",
       "date": "2017",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3899,7 +3899,7 @@
     { 
       "id": "32",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -3927,7 +3927,7 @@
     { 
       "id": "33",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 350",
+      "model": "E 350",
       "date": "2010",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3955,7 +3955,7 @@
     { 
       "id": "34",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 180",
+      "model": "C 180",
       "date": "1997",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -3983,7 +3983,7 @@
     { 
       "id": "35",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz SLK 350",
+      "model": "SLK 350",
       "date": "2005",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4011,7 +4011,7 @@
     { 
       "id": "37",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz S 420",
+      "model": "S 420",
       "date": "1995",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4039,7 +4039,7 @@
     { 
       "id": "38",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz A 220",
+      "model": "A 220",
       "date": "2019",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4067,7 +4067,7 @@
     { 
       "id": "39",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 350",
+      "model": "E 350",
       "date": "2007",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4095,7 +4095,7 @@
     { 
       "id": "40",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2010",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4123,7 +4123,7 @@
     { 
       "id": "41",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz GLS 400",
+      "model": "GLS 400",
       "date": "2019",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4151,7 +4151,7 @@
     { 
       "id": "42",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2018",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4179,7 +4179,7 @@
     { 
       "id": "43",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2019",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4207,7 +4207,7 @@
     { 
       "id": "44",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz S 430",
+      "model": "S 430",
       "date": "2007",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4235,7 +4235,7 @@
     { 
       "id": "45",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz E 320",
+      "model": "E 320",
       "date": "2003",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4263,7 +4263,7 @@
     { 
       "id": "46",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2016",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4291,7 +4291,7 @@
     { 
       "id": "47",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz CLK 320",
+      "model": "CLK 320",
       "date": "2003",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",
@@ -4319,7 +4319,7 @@
     { 
       "id": "48",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2018",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4347,7 +4347,7 @@
     { 
       "id": "49",
       "mark": "Mercedes", 
-      "model": " Mercedes-Benz C 300",
+      "model": "C 300",
       "date": "2016",
       "city": "Հայաստան, Երևան", 
       "clearance": "false",
@@ -4375,7 +4375,7 @@
     { 
       "id": "50",
       "mark": "Mercedes", 
-      "model": "Mercedes-Benz G 500",
+      "model": "G 500",
       "date": "2008",
       "city": "Հայաստան, Երևան", 
       "clearance": "true",

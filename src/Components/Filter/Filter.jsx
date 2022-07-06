@@ -1,20 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 
-const Filter = ({title, options}) => {
+const Filter = ({title, id, options, handleSelect, setModel}) => {
+  const [newOptions, setNewOptions] = useState([])
+  const [isActiv, setIsActive] = useState(false)
+
+  useEffect(()=> {
+    setNewOptions(options)
+  }, [options])
+
+  const handleClick = (e) => {
+    setModel([...handleSelect(e)])
+    console.log('click');
+  }
+
+  const handleButton = () => {
+    setIsActive(!isActiv)
+  }
+
+  let btn = <div className='button' onClick={handleButton}>{title}<span> ^ </span></div>
+
   return (
     <div className='filter'>
-      <button>{title}<span> ^ </span></button>
-      <div className='dropDown active'>
+      {btn}
+      <div className={isActiv? 'dropDown active': 'dropDown'}>
         <input type="text" />
         {
-          options.map((el, index) => <div key={index}> {el} </div>)
+          newOptions.map((el, index) => <div key={index} id={id} onClick={handleClick}> {el} </div>)
         }
       </div>
-      <button>Մակնիշը <span> ^ </span></button>
-      <button>Մակնիշը <span> ^ </span></button>
-      <button>Մակնիշը <span> ^ </span></button>
-      <button>Մակնիշը <span> ^ </span></button>
-      <button>Մակնիշը <span> ^ </span></button>
     </div>
   )
 }

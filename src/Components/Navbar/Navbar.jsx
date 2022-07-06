@@ -10,11 +10,11 @@ const Navbar = () => {
     <>
      
       <div className='bars' onClick={() => setOpen(!open)}>
-       <i class="fa-solid fa-bars"></i>
+       <i className="fa-solid fa-bars"></i>
        </div>
       <div className={open ? "container open" : "container"}>
       <span className='user'>
-      <i class="fa-solid fa-circle-user"></i>
+      <i className="fa-solid fa-circle-user"></i>
       <h2>Մուտք</h2>
       </span>
      
