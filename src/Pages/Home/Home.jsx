@@ -1,11 +1,10 @@
 import React from 'react'
-import FilterBar from '../../Components/Filter-bar'
+import FilterBar from '../../Components/FilterBar'
 
-const Home = ({handleSelect}) => {
-
+const Home = ({ cars }) => {
 
   return (
-    <FilterBar handleSelect={handleSelect}/>
+    <FilterBar cars={cars} />
   )
 }
 

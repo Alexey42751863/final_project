@@ -1,18 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const Filter = ({title, id, options, handleSelect, setModel}) => {
-  const [newOptions, setNewOptions] = useState([])
+const Filter = ({title, id, options}) => {
   const [isActiv, setIsActive] = useState(false)
-
-  useEffect(()=> {
-    setNewOptions(options)
-  }, [options])
-
-  const handleClick = (e) => {
-    setModel([...handleSelect(e)])
-    console.log('click');
-  }
 
   const handleButton = () => {
     setIsActive(!isActiv)
@@ -26,7 +16,7 @@ const Filter = ({title, id, options, handleSelect, setModel}) => {
       <div className={isActiv? 'dropDown active': 'dropDown'}>
         <input type="text" />
         {
-          newOptions.map((el, index) => <div key={index} id={id} onClick={handleClick}> {el} </div>)
+          options.map((el, index) => <div key={index} id={id} > {el} </div>)
         }
       </div>
     </div>

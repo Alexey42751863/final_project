@@ -16,10 +16,9 @@ import DetailsPage from './Pages/Details'
 const App = () => {
 
   const [cars, setCars] = useState([])
-  const [filteredCars, setFilteredCars] = useState([])
 
   useEffect(() => {
-    loadCars()
+    loadCars()    
   }, [])
 
   const loadCars = async () => {
@@ -27,11 +26,7 @@ const App = () => {
     setCars(result.data);
   }
 
-  const handleSelect = (e) => {
-    setFilteredCars(cars.filter(el => el[e.target.id] === e.target.outerText))
-    return new Set(filteredCars.map(el => el.model))
-
-  }
+  
 
 
 
@@ -42,7 +37,7 @@ const App = () => {
       <Header />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home handleSelect={handleSelect} />} />
+          <Route path='/' element={<Home cars={cars}/>} />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />
