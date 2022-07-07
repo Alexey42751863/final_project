@@ -40,7 +40,7 @@
     
 }
 .header .menu a span{
-    color: rgb(214, 60, 60);
+    color: rgb(221, 63, 63);
 }
 .btn{
     display: inline-block;
@@ -54,4 +54,36 @@
 
 .btn:hover{
     box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .3)
+}
+.massageBar{
+    position: fixed;
+    top: 0; right: -120%; 
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1001;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.content{
+    
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    height: 100vh;
+    background-color: rgb(247, 247, 248);
+    width: 23%;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.content i{
+    font-size: 3rem;
+    color: rgb(221, 63, 63);;
+}
+.massageBar.open{
+    right: 0;
+    transition: all .3s linear;
+    background: rgba(3, 3, 3, 0.3);
 }

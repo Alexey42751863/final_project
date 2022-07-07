@@ -8,6 +8,8 @@
     text-transform: capitalize;
     text-decoration: none;
 }
+
+
 .container{
     position: fixed;
     top: 0; left: -120%; 
@@ -24,7 +26,7 @@
     font-size: 1.5rem;
     height: 100vh;
     background-color: rgb(247, 247, 248);
-    
+    width: 23%;
 }
 .container.open{
     left: 0;
@@ -36,12 +38,15 @@
 .navbar .user{
     display: flex;
     background-color:  rgba(0, 0, 0, .1);
-    height: 20vh ;
-    
+    height: 15vh ;
+    padding-left: 1rem;
     color: rgba(0, 0, 0, .6);
-    align-items: center
+    align-items: center;
+    margin-bottom: .8rem;
 }
 .navbar .user i{
+    
+    border-radius: 50%;
     color: rgba(0, 0, 0, .6);
     cursor: pointer;
     margin-left: .3rem;
@@ -57,76 +62,92 @@
 .navbar .user h2:hover{
     cursor: pointer;
     color: rgb(41, 41, 44);
-    text-decoration: underline;
-}
-.navbar .home:hover{
-    color: rgb(41, 41, 44);
-    text-decoration: underline;
+    text-decoration: none;
 }
 .navbar .dillers:hover{
     color: rgb(51, 45, 45);
-    background-color: rgb(216, 133, .1);
+    background-color: rgb(223, 87, 87);
     text-decoration: underline;
 }
 .navbar .avtodiller:hover{
     color: rgb(41, 41, 44);
+    background-color: rgb(223, 87, 87);
     text-decoration: underline;
 }
 .navbar .govazd:hover{
+    background-color: rgb(223, 87, 87);
     color: rgb(41, 41, 44);
     text-decoration: underline;
 }
 .navbar .kanon:hover{
+    background-color: rgb(223, 87, 87);
     color: rgb(41, 41, 44);
     text-decoration: underline;
 }
 .navbar .help:hover{
+    background-color: rgb(223, 87, 87);
     color: rgb(41, 41, 44);
     text-decoration: underline;
 }
 .navbar .call:hover{
+    background-color: rgb(223, 87, 87);
     color: rgb(41, 41, 44);
     text-decoration: underline;
 }
+
 .navbar .dillers{
+    display: flex;
+    align-items: center;
     font-size: 1.2rem;
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
     text-decoration: none;
 }
 .navbar .avtodiller{
     font-size: 1.2rem;
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
     text-decoration: none;
 }
 .navbar .govazd{
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
     text-decoration: none;
     font-size: 1.2rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
 }
 .navbar .kanon{
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
     text-decoration: none;
     font-size: 1.2rem;
 }
 .navbar .help{
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
     text-decoration: none;
     font-size: 1.2rem;
 }
 .navbar .call{
     font-weight: 100;
     color: rgba(0, 0, 0, .7);
-    margin: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
     text-decoration: none;
     font-size: 1.2rem;
 }
@@ -139,4 +160,15 @@
     width: 75%;
     height: 100%;
     
+}
+.navbar .massage{
+   display: flex;
+   flex-direction: row;
+   font-size: 1.5rem;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+    margin-bottom: .8rem;
+}
+.navbar .massage:hover{
+    background-color: rgb(223, 87, 87);
 }
