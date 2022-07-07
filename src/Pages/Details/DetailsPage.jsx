@@ -17,14 +17,13 @@ const DetailsPage = () => {
     }
     useEffect(() => {
         getCarById(id).then(data => {
-            console.log(data);
             setCar(data);
         });
     }, []);
 
     return (
         <div className='DetailsPage'>
-            <div className="container">
+            <div className="detail-container">
                 <TitlePage car={car} />
                 <NavBarPage id={car.id} />
                 <div className="mainContent">

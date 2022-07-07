@@ -1,8 +1,8 @@
 import React from 'react';
-import {BsFillShareFill} from 'react-icons/bs';
-import {HiOutlineBan} from 'react-icons/hi';
+import { BsFillShareFill } from 'react-icons/bs';
+import { HiOutlineBan } from 'react-icons/hi';
 
-const MainContentInfo = ({car}) => {
+const MainContentInfo = ({ car }) => {
     return (
         <div className="MainContentInfo">
             <div className='quickSale'>
@@ -23,7 +23,7 @@ const MainContentInfo = ({car}) => {
                 </div>
                 <div className="rows">
                     <p>Թափքը</p>
-                    <p>{car["car body"]}</p>
+                    <p>{car["carBody"]}</p>
                 </div>
 
                 <div className="rows">
@@ -33,7 +33,7 @@ const MainContentInfo = ({car}) => {
 
                 <div className="rows">
                     <p>Ղեկը</p>
-                    <p>{car["steering wheel"]}</p>
+                    <p>{car["steeringWheel"]}</p>
                 </div>
 
                 <div className="rows">
@@ -46,7 +46,7 @@ const MainContentInfo = ({car}) => {
                 </div>
                 {car["mator value"] ? <div className="rows">
                     <p>Շարժիչի ծավալը</p>
-                    <p>{car["mator value"]}</p>
+                    <p>{car["matorValue"]}</p>
                 </div> : ''}
                 {car.tug ? <div className="rows">
                     <p>Քարշակը</p>

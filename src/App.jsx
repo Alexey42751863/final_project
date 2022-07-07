@@ -18,7 +18,7 @@ const App = () => {
   const [cars, setCars] = useState([])
 
   useEffect(() => {
-    loadCars()    
+    loadCars()
   }, [])
 
   const loadCars = async () => {
@@ -26,18 +26,12 @@ const App = () => {
     setCars(result.data);
   }
 
-  
-
-
-
-  // console.log(cars);
-
   return (
     <div className='App'>
       <Header />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home cars={cars}/>} />
+          <Route path='/' element={<Home cars={cars} />} />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />

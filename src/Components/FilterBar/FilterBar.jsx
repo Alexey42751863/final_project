@@ -73,58 +73,58 @@ const FilterBar = ({ cars }) => {
             </div>
             <div className='row hidden'>
                 <div className='filter-container'>
-                    <Filter 
-                    title={'Թափքը'} 
-                    id={'carBody'} 
-                    options={['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք']} 
+                    <Filter
+                        title={'Թափքը'}
+                        id={'carBody'}
+                        options={['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք']}
                     />
                 </div>
                 <div className='filter-container'>
-                    <Filter 
-                    title={'Ղեկը'} 
-                    id={'steeringWheel'} 
-                    options={['Ձախ', 'Աջ']} 
+                    <Filter
+                        title={'Ղեկը'}
+                        id={'steeringWheel'}
+                        options={['Ձախ', 'Աջ']}
                     />
                 </div>
                 <div className='filter-container'>
-                    <Filter 
-                    title={'Փոխանցման տուփը'} 
-                    id={'gearbox'} 
-                    options={['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական']} />
+                    <Filter
+                        title={'Փոխանցման տուփը'}
+                        id={'gearbox'}
+                        options={['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական']} />
                 </div>
                 <div className='filter-container'>
-                    <Filter 
-                    title={'Շարժիչը'} 
-                    id={'mator'} 
-                    options={['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել']} />
+                    <Filter
+                        title={'Շարժիչը'}
+                        id={'mator'}
+                        options={['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել']} />
                 </div>
             </div>
             <div className='row hidden'>
                 <div className='filter-container'>
-                    <Filter 
-                    title={'Քարշակը'} 
-                    id={'tug'} 
-                    options={['Առջևի', 'Ետևի', 'Լիաքարշակ']} />
+                    <Filter
+                        title={'Քարշակը'}
+                        id={'tug'}
+                        options={['Առջևի', 'Ետևի', 'Լիաքարշակ']} />
                 </div>
                 <div className='filter-container'>
-                    <FilterCountry 
-                    title={'Երկիրը'} 
-                    id={'country'} 
-                    options={['Հայաստան', 'ԱՄՆ']} 
-                    handleSelectCity={handleSelectCity}
-                    setCities={setCities}
-                        />
+                    <FilterCountry
+                        title={'Երկիրը'}
+                        id={'country'}
+                        options={['Հայաստան', 'ԱՄՆ']}
+                        handleSelectCity={handleSelectCity}
+                        setCities={setCities}
+                    />
                 </div>
                 <div className='filter-container'>
-                    <FilterCity 
-                    title={'Մարզը'} 
-                    id={'city'} 
-                    options={cities} />
+                    <FilterCity
+                        title={'Մարզը'}
+                        id={'city'}
+                        options={cities} />
                 </div>
                 <div className='filter-container '>
                 </div>
             </div>
-            <div className='row last'> 
+            <div className='row last'>
                 <div className='checkbox'>
                     <input type="checkbox" id='clearance' />
                     <label htmlFor="clearance"> Մաքսազերծված </label>

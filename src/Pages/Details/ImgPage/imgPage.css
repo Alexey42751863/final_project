@@ -109,6 +109,20 @@
     color: rgba(255, 82, 82, 0.95);
 }
 
+.ImgPage .mainImg .imgNum {
+    height: 33px;
+    width: 50px;
+    font-size: 14px;
+    background: rgba(29, 35, 42, .75);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .ImgPage .thumbs {
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +133,11 @@
     max-width: 7.17vw;
     max-height: 5.38vw;
     width: 19.3%;
+    height: auto;
     margin-top: 0.3vw;
     cursor: pointer;
+}
+
+.ImgPage .thumbs .mouseOver {
+    opacity: .3;
 }
