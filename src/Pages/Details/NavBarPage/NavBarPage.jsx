@@ -1,5 +1,5 @@
 import React from 'react'
-
+ 
 const NavBarPage = ({id}) => {
   return (
     <nav className='NavBarPage'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BsFillShareFill} from 'react-icons/bs';
 import {HiOutlineBan} from 'react-icons/hi';
-
+ 
 const MainContentInfo = ({car}) => {
     return (
         <div className="MainContentInfo">
