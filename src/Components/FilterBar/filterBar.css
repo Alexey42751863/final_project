@@ -75,6 +75,20 @@
     background-color: rgb(232 235 240)
 }
 
+.filter-bar .filterBtn{
+    min-width: 180px;
+    min-height: 36px;
+    background-color: #1172b6;
+    color: #f9f9f9;
+    line-height: 2.6rem;
+    border-radius: 4px;
+    transition: .2s ease-out;
+}
+
+.filter-bar .filterBtn:hover{
+    cursor: pointer;
+}
+
 
 
 .filter{
@@ -102,6 +116,11 @@
 }
 
 .filter .button:hover{
+    color: #1172B6;
+}
+
+.filter .button .closeBtn:hover{
+    cursor: pointer;
     color: #1172B6;
 }
 

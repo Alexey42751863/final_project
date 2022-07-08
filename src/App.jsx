@@ -14,8 +14,8 @@ import Footer from './Components/Footer'
 import DetailsPage from './Pages/Details'
 
 const App = () => {
-
   const [cars, setCars] = useState([])
+  const [filteredData, setFilteredData] = useState([])
 
   useEffect(() => {
     loadCars()
@@ -24,14 +24,23 @@ const App = () => {
   const loadCars = async () => {
     const result = await axios.get('http://localhost:3000/cars')
     setCars(result.data);
+    setFilteredData(result.data)
   }
+
+  const filterFunc = (key, value) => {
+    let newFilter = filteredData
+    newFilter.filter(el => el[key] === value)
+    setFilteredData(newFilter.filter(el => el[key] === value));
+  }
+
+  // console.log(filteredData);
 
   return (
     <div className='App'>
       <Header />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home cars={cars} />} />
+          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData}/>} />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />
