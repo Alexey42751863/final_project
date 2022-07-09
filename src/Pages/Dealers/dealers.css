@@ -1,0 +1,77 @@
+.dealers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dealers-container a{
+    text-decoration: none;
+}
+
+.dealers-container h1{
+    font-weight: normal;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.box{
+    margin-bottom: 25px;
+    max-width: 180px;
+    height: 220px;
+    box-shadow: 3px 3px 3px #efefef;
+}
+
+.box:hover{
+    box-shadow: 3px 10px 7px #efefef;
+    transition: .3,5s linear;
+}
+
+.box p{
+    color: #000;
+    margin-left: 10px;
+    font-size: 17px;
+    max-width: 130px;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.container1 a{
+    text-decoration: none;
+}
+
+.container1 h1{
+    font-weight: normal;
+}
+
+.official_dealers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.box{
+    margin-bottom: 25px;
+    max-width: 180px;
+    height: 220px;
+    box-shadow: 3px 3px 3px #efefef;
+}
+
+.box p{
+    color: #000;
+    margin-left: 10px;
+    font-size: 17px;
+    max-width: 130px;
+}

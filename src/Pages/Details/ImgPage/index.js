@@ -1,3 +1,3 @@
 import ImgPage from "./ImgPage";
-import './ImgPage.css';
+import './imgPage.css';
 export default ImgPage;

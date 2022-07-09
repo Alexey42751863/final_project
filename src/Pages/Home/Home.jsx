@@ -1,17 +1,10 @@
 import React from 'react'
-import Filter from '../../Components/Filter'
+import FilterBar from '../../Components/FilterBar'
 
-const Home = () => {
+const Home = ({ cars, filterFunc, filteredData }) => {
+
   return (
-    <div className='filter-bar'>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-      <Filter title={'Մակնիշը'} options={['Mercedes-Benz', 'Toyota', 'Nissan', 'BMW', 'Hyundai', ]}/>
-    </div>
+    <FilterBar cars={cars} filterFunc={filterFunc} filteredData={filteredData} />
   )
 }
 

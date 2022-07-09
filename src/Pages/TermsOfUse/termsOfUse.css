@@ -1,0 +1,10 @@
+.terms_text{
+    max-width: 1020px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.bold{
+    color: #000;
+    font-weight: bold;
+}

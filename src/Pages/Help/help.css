@@ -1,0 +1,39 @@
+.help_item{
+    border: 1px solid #EEE;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.my_page,.fast_sale,.payments,.security{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+h3{
+    font-size:25px;
+    font-weight: bolder;
+}
+
+.element{
+    max-width: 350px;
+    display: flex;
+    border-bottom: 1px solid #EEE;
+    position: relative;
+    left: -15px;
+    align-items: center;
+}
+
+.element a{
+    text-decoration: none;
+    color: #039be5;
+}
+
+.element a:hover{
+    color: red;
+}

@@ -1,3 +1,3 @@
 import TitlePage from "./TitlePage";
-import './TitlePage.css';
+import './titlePage.css';
 export default TitlePage;

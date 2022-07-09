@@ -108,11 +108,12 @@
 .ImgPage .mainImg .react:hover {
     color: rgba(255, 82, 82, 0.95);
 }
-.ImgPage .mainImg .imgNum{
+
+.ImgPage .mainImg .imgNum {
     height: 33px;
     width: 50px;
     font-size: 14px;
-    background:rgba(29, 35, 42, .75);
+    background: rgba(29, 35, 42, .75);
     color: #fff;
     position: absolute;
     bottom: 0;
@@ -121,6 +122,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .ImgPage .thumbs {
     display: flex;
     flex-wrap: wrap;
@@ -135,6 +137,7 @@
     margin-top: 0.3vw;
     cursor: pointer;
 }
-.ImgPage .thumbs .mouseOver{
+
+.ImgPage .thumbs .mouseOver {
     opacity: .3;
 }
