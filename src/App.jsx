@@ -16,10 +16,13 @@ import DetailsPage from './Pages/Details'
 const App = () => {
   const [cars, setCars] = useState([])
   const [filteredData, setFilteredData] = useState([])
+  const [filterOptions, setfilterOptions] = useState({})
 
   useEffect(() => {
     loadCars()
   }, [])
+
+  // useEffect(() => filtering(), [filterOptions])
 
   const loadCars = async () => {
     const result = await axios.get('http://localhost:3000/cars')
@@ -27,11 +30,32 @@ const App = () => {
     setFilteredData(result.data)
   }
 
-  const filterFunc = (key, value) => {
-    let newFilter = filteredData
-    newFilter.filter(el => el[key] === value)
-    setFilteredData(newFilter.filter(el => el[key] === value));
+  const filtering = () => {
+    let newFilter = cars
+    setFilteredData(newFilter.filter(el => {
+      return (el.mark === (filterOptions.mark ? filterOptions.mark: el.mark )) && 
+      (el.model === (filterOptions.model ? filterOptions.model: el.model )) &&
+      (el.country === (filterOptions.country ? filterOptions.country: el.country )) && 
+      (el.city === (filterOptions.city ? filterOptions.city: el.city ))
+    }))
+    console.log(filterOptions);
   }
+
+  const filterFunc = (key, value) => {
+    // let newFilter = filteredData
+    setfilterOptions(filterOptions, filterOptions[key]= value)
+    console.log(filterOptions);
+    filtering()
+    // newFilter.filter(el => el[key] === value)
+    // setFilteredData(newFilter.filter(el => el[key] === value));
+  }
+
+  const removeFilterOption = (key) => {
+    setfilterOptions(filterOptions, filterOptions[key] = '')
+    filtering()
+  }
+
+
 
   // console.log(filteredData);
 
@@ -40,7 +64,7 @@ const App = () => {
       <Header />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData}/>} />
+          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData} removeFilterOption={removeFilterOption}/>} />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />

@@ -6,7 +6,7 @@ import FilterCountry from './FilterCountry'
 import FilterCity from './FilterCity'
 import Filter from './Filter'
 
-const FilterBar = ({ cars, filterFunc, filteredData }) => {
+const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     const [models, setModels] = useState([])
     const [cities, setCities] = useState([])
     const [filteredCars, setFilteredCars] = useState([])
@@ -39,6 +39,8 @@ const FilterBar = ({ cars, filterFunc, filteredData }) => {
         filterFunc(title, e.target.outerText)
     }
 
+
+
     const handleFilterBtn = () => {
 
     }
@@ -54,6 +56,7 @@ const FilterBar = ({ cars, filterFunc, filteredData }) => {
                         handleSelectMark={handleSelectMark}
                         setModels={setModels}
                         handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
@@ -62,6 +65,7 @@ const FilterBar = ({ cars, filterFunc, filteredData }) => {
                         id={'model'}
                         options={models}
                         handleSelectOption ={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container double'>
@@ -131,6 +135,7 @@ const FilterBar = ({ cars, filterFunc, filteredData }) => {
                         handleSelectCity={handleSelectCity}
                         setCities={setCities}
                         handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
@@ -139,6 +144,7 @@ const FilterBar = ({ cars, filterFunc, filteredData }) => {
                         id={'city'}
                         options={cities}
                         handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container '>

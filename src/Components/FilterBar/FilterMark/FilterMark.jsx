@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSelectOption }) => {
+const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
   const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +14,10 @@ const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSel
     handleSelectOption(e, 'mark')
   }
 
-  const handleCloseBtn = () => {
+  const handleCloseBtn = (e) => {
+    // console.log(e.target.parentElement.parentElement.innerText.slice(0, -3));
+    // let key = e.target.parentElement.parentElement.innerText.slice(0, -3)
+    removeFilterOption('mark')
     setActivTitle(title)
     setIsActive(false)
   }

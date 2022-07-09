@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const FilterCountry = ({ title, id, options, handleSelectCity, setCities, handleSelectOption }) => {
+const FilterCountry = ({ title, id, options, handleSelectCity, setCities, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
   const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -15,6 +15,7 @@ const FilterCountry = ({ title, id, options, handleSelectCity, setCities, handle
   }
 
   const handleCloseBtn = () => {
+    removeFilterOption('country')
     setActivTitle(title)
     setIsActive(false)
   }
