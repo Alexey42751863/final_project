@@ -18,7 +18,9 @@
     padding: 10px 10px;
 }
 
-
+.filter-bar .row.hidden.closed{
+    display: none;
+  }
 
 .filter-bar .row .filter-container{
     height: 42px;
