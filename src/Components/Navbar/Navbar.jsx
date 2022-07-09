@@ -36,7 +36,7 @@ const Navbar = ({showSideBarM}) => {
     <div>
 
       <div className='bars' onClick={showSideBar}>
-        <i class="fa-solid fa-bars"></i>
+        <i className="fa-solid fa-bars"></i>
       </div>
 
       <div className={open ? "container open" : "container"}>

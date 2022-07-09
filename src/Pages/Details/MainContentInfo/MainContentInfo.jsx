@@ -44,7 +44,7 @@ const MainContentInfo = ({ car }) => {
                     <p>Գույնը</p>
                     <p>{car.color}</p>
                 </div>
-                {car["mator value"] ? <div className="rows">
+                {car["matorValue"] ? <div className="rows">
                     <p>Շարժիչի ծավալը</p>
                     <p>{car["matorValue"]}</p>
                 </div> : ''}

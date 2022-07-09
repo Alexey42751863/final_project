@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import FilterMark from './FilterMark'
 import FilterModel from './FilterModel'
@@ -6,11 +6,16 @@ import FilterCountry from './FilterCountry'
 import FilterCity from './FilterCity'
 import Filter from './Filter'
 
-const FilterBar = ({ cars }) => {
+const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     const [models, setModels] = useState([])
     const [cities, setCities] = useState([])
     const [filteredCars, setFilteredCars] = useState([])
-    const[openfilter,setOpenfilter] = useState(false)
+    const [suggestions, setSuggestions] = useState(0)
+    const [openfilter,setOpenfilter] = useState(false)
+
+    useEffect(() => {
+        setSuggestions(filteredData.length)
+    }, [filteredData])
 
     const genOptions = (start, finish, interval = 1) => {
         let arr = []
@@ -22,6 +27,7 @@ const FilterBar = ({ cars }) => {
 
     const handleSelectMark = (e) => {
         setFilteredCars(cars.filter(el => el[e.target.id] === e.target.outerText))
+        // filterFunc('mark', e.target.outerText)
         return new Set(filteredCars.map(el => el.model))
     }
 
@@ -31,6 +37,14 @@ const FilterBar = ({ cars }) => {
     }
 
     const openfilterfunc = () => { setOpenfilter(!openfilter) }
+
+    const handleSelectOption = (e, title) => {
+        filterFunc(title, e.target.outerText)
+    }
+
+    const handleFilterBtn = () => {
+
+    }
 
     return (
         <div className='filter-bar'>
@@ -42,6 +56,8 @@ const FilterBar = ({ cars }) => {
                         options={['Mercedes', 'Toyota', 'Nissan', 'BMW', 'Hyundai']}
                         handleSelectMark={handleSelectMark}
                         setModels={setModels}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
@@ -49,6 +65,8 @@ const FilterBar = ({ cars }) => {
                         title={'Մոդելը'}
                         id={'model'}
                         options={models}
+                        handleSelectOption ={handleSelectOption}
+                        removeFilterOption ={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container double'>
@@ -107,7 +125,8 @@ const FilterBar = ({ cars }) => {
                     <Filter
                         title={'Քարշակը'}
                         id={'tug'}
-                        options={['Առջևի', 'Ետևի', 'Լիաքարշակ']} />
+                        options={['Առջևի', 'Ետևի', 'Լիաքարշակ']}
+                    />
                 </div>
                 <div className='filter-container'>
                     <FilterCountry
@@ -116,13 +135,18 @@ const FilterBar = ({ cars }) => {
                         options={['Հայաստան', 'ԱՄՆ']}
                         handleSelectCity={handleSelectCity}
                         setCities={setCities}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
                     <FilterCity
                         title={'Մարզը'}
                         id={'city'}
-                        options={cities} />
+                        options={cities}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
+                    />
                 </div>
                 <div className='filter-container '>
                 </div>
@@ -136,6 +160,7 @@ const FilterBar = ({ cars }) => {
                     հասարակ որոնում
                 </div>
             </div>
+            <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
         </div>
     )
 }

@@ -9,7 +9,7 @@ import NavBarPage from './NavBarPage';
 const DetailsPage = () => {
     const [car, setCar] = useState({});
     const { id } = useParams();
-
+ 
 
     const getCarById = async (id) => {
         const response = await fetch('http://localhost:3000/cars/' + id);
@@ -27,7 +27,7 @@ const DetailsPage = () => {
                 <TitlePage car={car} />
                 <NavBarPage id={car.id} />
                 <div className="mainContent">
-                    <ImgPage car={car.imgUrls} />
+                    <ImgPage car={car} />
                     <MainContentInfo car={car} />
                     <div className="someContent">
                         Այստեղ կարող է լինել ձեր գովազդը
