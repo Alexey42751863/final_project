@@ -1,36 +1,75 @@
 import React from 'react'
-import {NavLink as Link} from 'react-router-dom'
-import { useState } from 'react'
+import { NavLink as Link } from 'react-router-dom'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const Navbar = () => {
- const [open, setOpen] = useState(true)
+
+const Navbar = ({showSideBarM}) => {
+  const [open, setOpen] = useState(false)
+
+
+  const showSideBar = () => setOpen(true)
+  const closeSideBar = () => {
+    setOpen(false)
+    showSideBarM()
+  }
+
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (event.target.className == 'container open') {
+
+        setOpen(false)
+      }
+
+    }
+    document.addEventListener("mousedown", handler)
+    return () => {
+      document.removeEventListener("mousedown", handler)
+    }
+  })
+
 
 
   return (
-    <>
-     
-      <div className='bars' onClick={() => setOpen(!open)}>
-       <i className="fa-solid fa-bars"></i>
-       </div>
-      <div className={open ? "container open" : "container"}>
-      <span className='user'>
-      <i className="fa-solid fa-circle-user"></i>
-      <h2>Մուտք</h2>
-      </span>
-     
 
-      <nav className="navbar">
-      <Link to={'/'} className="home">Home</Link>
-      <Link to={'/dealers'} className="dillers" >Դիլերներ</Link>
-      <Link to={'/be_a_dealer'} className="avtodiller">Դառնալ ավտոդիլեր</Link>
-      <Link to={'/advertising'} className="govazd">Գովազդ կայքում</Link>
-      <Link to={'/terms_of_use'} className="kanon">Օգտագործման կանոնները</Link>
-      <Link to={'/help'} className="help">Օգնություն</Link>
-      <Link to={'/contact'} className="call">Կապ</Link>  
-    </nav>
+    <div>
+
+      <div className='bars' onClick={showSideBar}>
+        <i className="fa-solid fa-bars"></i>
+      </div>
+
+      <div className={open ? "container open" : "container"}>
+
+        <nav className="navbar">
+          <span className='user'>
+            <i className="fa-solid fa-circle-user"></i>
+            <h2>Մուտք</h2>
+
+          </span>
+          <span className='massage' onClick={closeSideBar}>
+            <i className="fa-solid fa-message"></i>
+            <h5>Հաղորդագրություններ</h5>
+          </span>
+
+          <Link to={'/dealers'} className="dillers" >Դիլերներ</Link>
+          <Link to={'/be_a_dealer'} className="avtodiller">Դառնալ ավտոդիլեր</Link>
+          <Link to={'/advertising'} className="govazd">Գովազդ կայքում</Link>
+          <Link to={'/terms_of_use'} className="kanon">Օգտագործման կանոնները</Link>
+          <Link to={'/help'} className="help">Օգնություն</Link>
+          <Link to={'/contact'} className="call">Կապ</Link>
+
+        </nav>
+
+
+      </div>
+
     </div>
-    </>
+
+
+
+
   )
 
-  }
+}
 export default Navbar

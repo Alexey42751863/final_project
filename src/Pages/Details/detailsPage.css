@@ -1,0 +1,6 @@
+.DetailsPage .detail-container{
+    max-width: 1260px;
+    min-width: 980px;
+    width: 80%;
+    margin: 0 auto;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import './BeADealer.css'
+import './beADealer.css'
 
 const BeADealer = () => {
   return (

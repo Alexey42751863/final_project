@@ -1,0 +1,92 @@
+ .Fullscreen {
+     display: none;
+ }
+
+ .Fullscreen.active {
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: fit-content;
+     background: rgba(29, 35, 42, .3);
+     z-index: 10000;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .Fullscreen .wrapper {
+     display: flex;
+     flex-direction: column;
+     width: 90%;
+     background: rgb(247, 240, 240);
+ }
+
+ .Fullscreen .wrapper .wrapperHeader {
+     width: 90%;
+     height: 87px;
+     background: #fff;
+     position: fixed;
+
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 100%;
+     font-size: 34px;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo .mainInfo {
+     display: flex;
+     padding: 10px;
+     gap: 10px;
+     width: 60%;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo .mainInfo .productDate {
+     color: #727272;
+     cursor: pointer;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo .mainInfo .markModelInfo {
+     color: #1172b6;
+     cursor: pointer;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo .mainInfo .markModelInfo:hover {
+     color: #FF5C5C;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .carInfo .priceInfo {
+     width: 40%;
+     text-align: left;
+ }
+
+ .Fullscreen .wrapper .wrapperContent {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 5px;
+ }
+
+ .Fullscreen .times {
+     font-size: 25px;
+     color: rgb(94, 86, 86);
+     top: 20px;
+     right: 20px;
+     position: fixed;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .addInfo {
+     margin-left: 20px;
+     display: flex;
+     gap: 10px;
+ }
+
+ .Fullscreen .wrapper .wrapperHeader .addInfo .customs {
+     color: #4CAF50;
+ }
