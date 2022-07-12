@@ -11,7 +11,9 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     const [cities, setCities] = useState([])
     const [filteredCars, setFilteredCars] = useState([])
     const [suggestions, setSuggestions] = useState(0)
-    const [openfilter,setOpenfilter] = useState(false)
+    const [openfilter, setOpenfilter] = useState(false)
+    const [isHideRows, setIsHideRows] = useState(true)
+    const [isClearance, setIsClearance] = useState(false)
 
     useEffect(() => {
         setSuggestions(filteredData.length)
@@ -36,14 +38,21 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         return new Set(filteredCars.map(el => el.city).filter(el => el !== undefined))
     }
 
-    const openfilterfunc = () => { setOpenfilter(!openfilter) }
+    const openfilterfunc = () => {
+        setOpenfilter(!openfilter)
+        setIsHideRows(!isHideRows)
+    }
 
     const handleSelectOption = (e, title) => {
-        filterFunc(title, e.target.outerText)
+        title === 'priceOfStart' || title === 'priceOfEnd'? filterFunc(title, e.target.outerText.slice(1)): filterFunc(title, e.target.outerText)
     }
 
     const handleFilterBtn = () => {
 
+    }
+
+    const handleClearance = (e) => {
+        e.target.checked? filterFunc('clearance', String(e.target.checked)): filterFunc('clearance', '')
     }
 
     return (
@@ -65,39 +74,51 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                         title={'Մոդելը'}
                         id={'model'}
                         options={models}
-                        handleSelectOption ={handleSelectOption}
-                        removeFilterOption ={removeFilterOption}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container double'>
                     <Filter
                         title={'Տարին, սկս.'}
                         id={'dateOfStart'}
-                        options={genOptions(1980, 2022)}
+                        options={genOptions(1990, 2022)}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                     <Filter
                         title={'մինչև'}
                         id={'dateOfEnd'}
-                        options={genOptions(1980, 2022)}
+                        options={genOptions(1990, 2022)}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container double'>
                     <Filter
-                        title={'Գինե սկս.'}
+                        title={'Գինը սկս.'}
+                        id={'priceOfStart'}
                         options={genOptions(1000, 100000, 1000).map(el => el = '$' + el)}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                     <Filter
                         title={'մինչև'}
+                        id={'priceOfEnd'}
                         options={genOptions(1000, 100000, 1000).map(el => el = '$' + el)}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
             </div>
-            <div className={openfilter?'row hidden':'row hidden closed'}>
+            <div className={openfilter ? 'row hidden' : 'row hidden closed'}>
                 <div className='filter-container'>
                     <Filter
                         title={'Թափքը'}
                         id={'carBody'}
                         options={['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք']}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
@@ -105,27 +126,37 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                         title={'Ղեկը'}
                         id={'steeringWheel'}
                         options={['Ձախ', 'Աջ']}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
                     <Filter
                         title={'Փոխանցման տուփը'}
                         id={'gearbox'}
-                        options={['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական']} />
+                        options={['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական']} 
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
+                        />
                 </div>
                 <div className='filter-container'>
                     <Filter
                         title={'Շարժիչը'}
                         id={'mator'}
-                        options={['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել']} />
+                        options={['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել']} 
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
+                        />
                 </div>
             </div>
-            <div className={openfilter?'row hidden':'row hidden closed'}>
+            <div className={openfilter ? 'row hidden' : 'row hidden closed'}>
                 <div className='filter-container'>
                     <Filter
                         title={'Քարշակը'}
                         id={'tug'}
                         options={['Առջևի', 'Ետևի', 'Լիաքարշակ']}
+                        handleSelectOption={handleSelectOption}
+                        removeFilterOption={removeFilterOption}
                     />
                 </div>
                 <div className='filter-container'>
@@ -153,11 +184,11 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
             </div>
             <div className='row last'>
                 <div className='checkbox'>
-                    <input type="checkbox" id='clearance' />
+                    <input type="checkbox" id='clearance' onClick={handleClearance}/>
                     <label htmlFor="clearance"> Մաքսազերծված </label>
                 </div>
                 <div className='filterButton' onClick={openfilterfunc}>
-                    հասարակ որոնում
+                    {!isHideRows? 'հասարակ որոնում': 'ընդլայնված որոնում'}
                 </div>
             </div>
             <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>

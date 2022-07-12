@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Filter = ({ title, id, options }) => {
+const Filter = ({ title, id, options, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
   const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -10,9 +10,11 @@ const Filter = ({ title, id, options }) => {
     setActivTitle(e.target.innerText)
     setIsActive(true)
     setIsOpen(!isOpen)
+    handleSelectOption(e, id)
   }
 
   const handleCloseBtn = () => {
+    removeFilterOption(id)
     setActivTitle(title)
     setIsActive(false)
   }

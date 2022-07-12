@@ -22,8 +22,6 @@ const App = () => {
     loadCars()
   }, [])
 
-  // useEffect(() => filtering(), [filterOptions])
-
   const loadCars = async () => {
     const result = await axios.get('http://localhost:3000/cars')
     setCars(result.data);
@@ -31,33 +29,35 @@ const App = () => {
   }
 
   const filtering = () => {
-    let newFilter = cars
+    let newFilter = cars 
     setFilteredData(newFilter.filter(el => {
       return (el.mark === (filterOptions.mark ? filterOptions.mark: el.mark )) && 
       (el.model === (filterOptions.model ? filterOptions.model: el.model )) &&
+      (el.carBody === (filterOptions.carBody ? filterOptions.carBody: el.carBody )) && 
+      (el.steeringWheel === (filterOptions.steeringWheel ? filterOptions.steeringWheel: el.steeringWheel ))&& 
+      (el.gearbox === (filterOptions.gearbox ? filterOptions.gearbox: el.gearbox )) &&
+      (el.mator === (filterOptions.mator ? filterOptions.mator: el.mator )) &&
+      (el.tug === (filterOptions.tug ? filterOptions.tug: el.tug )) &&
       (el.country === (filterOptions.country ? filterOptions.country: el.country )) && 
-      (el.city === (filterOptions.city ? filterOptions.city: el.city ))
+      (el.city === (filterOptions.city ? filterOptions.city: el.city )) &&
+      (+el.date >= (filterOptions.dateOfStart ? +filterOptions.dateOfStart: 1990 ) && 
+      (+el.date <= (filterOptions.dateOfEnd ? +filterOptions.dateOfEnd: el.date))) &&
+      (+el.priceDolor >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart: 0) && 
+      (+el.priceDolor <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd: el.priceDolor ))) &&
+      (el.clearance === (filterOptions.clearance ? filterOptions.clearance: el.clearance ))
     }))
-    console.log(filterOptions);
+    
   }
 
   const filterFunc = (key, value) => {
-    // let newFilter = filteredData
     setfilterOptions(filterOptions, filterOptions[key]= value)
-    console.log(filterOptions);
     filtering()
-    // newFilter.filter(el => el[key] === value)
-    // setFilteredData(newFilter.filter(el => el[key] === value));
   }
 
   const removeFilterOption = (key) => {
     setfilterOptions(filterOptions, filterOptions[key] = '')
     filtering()
   }
-
-
-
-  // console.log(filteredData);
 
   return (
     <div className='App'>
