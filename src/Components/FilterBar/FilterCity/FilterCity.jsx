@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { AiOutlineDown ,AiOutlineUp } from 'react-icons/ai';
 
 const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
@@ -24,7 +25,7 @@ const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOptio
       <div className='button' onClick={() => setIsOpen(!isOpen)}>
         {activeTitle}
         <span>
-          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} ^
+          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} <AiOutlineUp />
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
