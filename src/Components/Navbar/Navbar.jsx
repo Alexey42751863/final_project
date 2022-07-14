@@ -13,7 +13,7 @@ const Navbar = ({showSideBarM}) => {
     setOpen(false)
     showSideBarM()
   }
-
+const closeLink = () => setOpen(false)
 
   useEffect(() => {
     let handler = (event) => {
@@ -36,7 +36,7 @@ const Navbar = ({showSideBarM}) => {
     <div>
 
       <div className='bars' onClick={showSideBar}>
-        <i className="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
       </div>
 
       <div className={open ? "container open" : "container"}>
@@ -52,12 +52,12 @@ const Navbar = ({showSideBarM}) => {
             <h5>Հաղորդագրություններ</h5>
           </span>
 
-          <Link to={'/dealers'} className="dillers" >Դիլերներ</Link>
-          <Link to={'/be_a_dealer'} className="avtodiller">Դառնալ ավտոդիլեր</Link>
-          <Link to={'/advertising'} className="govazd">Գովազդ կայքում</Link>
-          <Link to={'/terms_of_use'} className="kanon">Օգտագործման կանոնները</Link>
-          <Link to={'/help'} className="help">Օգնություն</Link>
-          <Link to={'/contact'} className="call">Կապ</Link>
+          <Link to={'/dealers'} className="dillers" onClick={closeLink}>Դիլերներ</Link>
+          <Link to={'/be_a_dealer'} className="avtodiller" onClick={closeLink}>Դառնալ ավտոդիլեր</Link>
+          <Link to={'/advertising'} className="govazd" onClick={closeLink}>Գովազդ կայքում</Link>
+          <Link to={'/terms_of_use'} className="kanon" onClick={closeLink}>Օգտագործման կանոնները</Link>
+          <Link to={'/help'} className="help" onClick={closeLink}>Օգնություն</Link>
+          <Link to={'/contact'} className="call" onClick={closeLink}>Կապ</Link>
 
         </nav>
 

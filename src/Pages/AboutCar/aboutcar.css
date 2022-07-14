@@ -1,0 +1,73 @@
+.aboutcar{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 3px 8px rgb(180 184 189 / 15%);
+    border-radius: 4px;
+    margin: 0.5rem 0 1rem;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+}
+.aboutcar .img{
+    width: 28%;
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+}
+.aboutcar image{
+    width: 100%;
+}
+.aboutcar.button{
+    width: 28%;
+    margin-top: 2.5rem;
+}
+.aboutcar .button h3{
+    margin-top: 2.5rem;
+    color: rgb(92, 92, 238);
+    font-size: 20px;
+}
+.aboutcar .button .btn{
+    display: block;
+    background-color: #004750;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 4px;
+    text-align: center
+}
+.aboutcar .button .btn:hover{
+    box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .3)
+}
+.aboutcar .info{
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.aboutcar .info .type{
+    color: #010101;
+}
+.aboutcar .info .name{
+    color: rgb(92, 92, 238);
+}
+.aboutcar .info .props{
+    font-size: 14px;
+    color: #010101;
+    line-height: inherit;
+    line-height: 18px;
+    padding: 9px 0;
+    min-height: 54px;
+}
+.aboutcar .info p .date{
+    
+    background-color: rgb(215, 217, 250);
+    color: rgb(121, 117, 117);
+}
+.aboutcar .info .clearance{
+    color: rgb(116, 207, 116);
+}

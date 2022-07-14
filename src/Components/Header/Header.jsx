@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import SearchBar from '../SearchBar';
+import { Link } from 'react-router-dom';
 const Header = () => {
 
   const [openM, setOpenM] = useState(false)
@@ -26,7 +27,7 @@ const Header = () => {
   return (
     <div className='header'>
       <Navbar showSideBarM={showSideBarM} />
-      <h2><a href="">avto.am</a></h2>
+      <h2><Link to={'/'}>avto.am</Link></h2>
       <SearchBar />
       <div className='diler'>
         <i className="fa-solid fa-car"></i>
