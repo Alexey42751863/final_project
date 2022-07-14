@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-const Navbar = ({showSideBarM}) => {
+const Navbar = ({ showSideBarM }) => {
   const [open, setOpen] = useState(false)
 
 
@@ -18,7 +18,6 @@ const Navbar = ({showSideBarM}) => {
   useEffect(() => {
     let handler = (event) => {
       if (event.target.className == 'container open') {
-
         setOpen(false)
       }
 
@@ -32,9 +31,7 @@ const Navbar = ({showSideBarM}) => {
 
 
   return (
-
     <div>
-
       <div className='bars' onClick={showSideBar}>
         <i className="fa-solid fa-bars"></i>
       </div>

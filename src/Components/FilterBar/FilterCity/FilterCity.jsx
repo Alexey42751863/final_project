@@ -28,7 +28,7 @@ const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOptio
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
-        <input type="text" />
+        {/* <input type="text" /> */}
         {
           options.map((el, index) => <div
             key={index}
