@@ -12,8 +12,6 @@ const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOptio
 
   useEffect(() => setParams(options), [options])
 
-  console.log(options, params);
-
   const handleClickOption = (e) => {
     setSearchValue('')
     setParams(options)

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
-const Header = () => {
+const Header = ({searchValue, setSearchValue, searching}) => {
 
   const [openM, setOpenM] = useState(false)
   const showSideBarM = () => setOpenM(true)
@@ -29,7 +29,7 @@ const Header = () => {
         <Navbar showSideBarM={showSideBarM} />
         <Link className='logo' to={'/'}></Link>
       </div>
-      <SearchBar />
+      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} searching={searching}/>
       <div className='diler'>
         <i className="fa-solid fa-car"></i>
         <i className="fa-solid fa-message" onClick={showSideBarM}></i>

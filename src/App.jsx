@@ -19,6 +19,7 @@ const App = () => {
   const [cars, setCars] = useState([])
   const [filteredData, setFilteredData] = useState([])
   const [filterOptions, setfilterOptions] = useState({})
+  const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
     loadCars()
@@ -60,9 +61,21 @@ const App = () => {
     filtering()
   }
 
+  const searching = (e) => {
+    e.preventDefault()
+    let arr = cars
+    setFilteredData(
+      arr.filter(el => {
+        return el.mark.toLowerCase().includes(searchValue.toLowerCase()) ||
+        el.model.toLowerCase().includes(searchValue.toLowerCase()) ||
+        el.date.toLowerCase().includes(searchValue.toLowerCase())
+      })
+    );
+  }
+
   return (
     <div className='App'>
-      <Header />
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} searching={searching}/>
       <div className='content'>
         <Routes>
           <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData} removeFilterOption={removeFilterOption}/>} />

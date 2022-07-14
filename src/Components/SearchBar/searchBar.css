@@ -17,6 +17,15 @@
     height: auto;
     background: #FFF;
     width: 100%;
+    font-size: 1rem;
+}
+
+.SearchBar input::placeholder{
+    color: #e7eaed;
+}
+
+.SearchBar button{
+    background: #FFF;
 }
 
 .SearchBar i{
@@ -25,4 +34,5 @@
 
 .SearchBar i:hover{
     box-shadow: none;
+    color:#7298b3;
 }
