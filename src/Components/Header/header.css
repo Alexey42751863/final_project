@@ -1,5 +1,4 @@
-
-*{
+* {
     padding: 0px;
     border: 0px;
     margin: 0px;
@@ -9,10 +8,12 @@
     text-transform: capitalize;
     text-decoration: none;
 }
-.header{
+
+.header {
     position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgb(247, 247, 247);
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -20,44 +21,61 @@
     padding: 1rem 9%;
     box-shadow: 0 .2rem .2rem rgba(0, 0, 0, .3)
 }
-.header i{
+
+.header .diler{
+    display: flex;
+    align-items: center;
+}
+
+.header i {
     font-size: 1.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    
+    padding: 0;
+    color: #8695a4;
+    /* padding-top: 10.4px; */
 }
-.header i:hover{
+
+.header i:hover {
     box-shadow: 0 .2rem .2rem rgba(0, 0, 0, .3);
     cursor: pointer;
 }
-.header .menu{
+
+.header .menu {
     display: flex;
     flex-direction: row;
     font-size: 1.5rem;
 }
-.header .menu i{
+
+.header .menu i {
     color: rgba(0, 0, 0, .7);
-    
 }
-.header .menu a span{
+
+.header .menu a span {
     color: rgb(221, 63, 63);
 }
-.header .btn{
+
+.header .btn {
     display: inline-block;
-    background: rgb(92, 92, 238);
-    color: var(--white);
+    background: #1172b6;
+    color: #f9f9f9;
     border: .2rem solid var(--orange);
     cursor: pointer;
     font-size: 1rem;
-    padding: .5rem 2rem;
+    padding: 0 2rem;
+    border-radius: 4px;
+    min-height: 36px;
+    line-height: 44px;
 }
 
-.header .btn:hover{
+.header .btn:hover {
     box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .3)
 }
-.header .massageBar{
+
+.header .massageBar {
     position: fixed;
-    top: 0; right: -120%; 
+    top: 0;
+    right: -120%;
     width: 100%;
     min-height: 100vh;
     z-index: 1001;
@@ -65,8 +83,9 @@
     justify-content: right;
     align-items: center;
 }
-.header .massageContent{
-    
+
+.header .massageContent {
+
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -76,14 +95,28 @@
     width: 23%;
     align-items: center;
     justify-content: space-around;
-    
+
 }
-.header .massageContent i{
+
+.header .massageContent i {
     font-size: 3rem;
-    color: rgb(221, 63, 63);;
+    color: rgb(221, 63, 63);
+    ;
 }
-.header .massageBar.open{
+
+.header .massageBar.open {
     right: 0;
     transition: all .3s linear;
     background: rgba(3, 3, 3, 0.3);
+}
+
+.header .logoContainter{
+    display: flex;
+    align-items: center;
+}
+
+.header .logoContainter .logo{
+    background: url(https://auto.am/assets/img/logo.svg) center no-repeat;
+    width: 195px;
+    height: 45px;
 }

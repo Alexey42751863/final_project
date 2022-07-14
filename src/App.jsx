@@ -13,6 +13,7 @@ import TermsOfUse from './Pages/TermsOfUse'
 import Footer from './Components/Footer'
 import DetailsPage from './Pages/Details'
 import CarsPage from './Pages/CarsPage'
+import CarItem from './Components/CarItem'
 
 const App = () => {
   const [cars, setCars] = useState([])
@@ -73,7 +74,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<DetailsPage />} />
           <Route path='/cars' element={<CarsPage/>}/>
-          {/* <Route path='/arman' element={<Arman/>}/> */}
+          <Route path='/caritem' element={<CarItem/>}/>
         </Routes>
       </div>
       <Footer />

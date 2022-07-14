@@ -13,7 +13,6 @@ const Header = () => {
   useEffect(() => {
     let handlerM = (event) => {
       if (event.target.className == 'massageBar open') {
-
         setOpenM(false)
       }
 
@@ -23,11 +22,13 @@ const Header = () => {
       document.removeEventListener("mousedown", handlerM)
     }
   })
-  
+
   return (
     <div className='header'>
-      <Navbar showSideBarM={showSideBarM} />
-      <h2><Link to={'/'}>avto.am</Link></h2>
+      <div className='logoContainter'>
+        <Navbar showSideBarM={showSideBarM} />
+        <Link className='logo' to={'/'}></Link>
+      </div>
       <SearchBar />
       <div className='diler'>
         <i className="fa-solid fa-car"></i>
