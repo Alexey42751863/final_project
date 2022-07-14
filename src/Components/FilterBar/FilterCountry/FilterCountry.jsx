@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const FilterCountry = ({ title, id, options, handleSelectCity, setCities, handleSelectOption, removeFilterOption }) => {
+const FilterCountry = ({ title, id, options, handleSelectCity, setOptions, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
   const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClickOption = (e) => {
-    setCities([...handleSelectCity(e)])
+    setOptions(options, options.city = [...handleSelectCity(e)])
     setActivTitle(e.target.innerText)
     setIsActive(true)
     setIsOpen(!isOpen)
@@ -29,9 +29,9 @@ const FilterCountry = ({ title, id, options, handleSelectCity, setCities, handle
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
-        <input type="text" />
+        {/* <input type="text" /> */}
         {
-          options.map((el, index) => <div
+          options.country.map((el, index) => <div
             key={index}
             id={id}
             onClick={handleClickOption}

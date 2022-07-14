@@ -74,7 +74,8 @@
 }
 
 .filter-bar .last .filterButton:hover{
-    background-color: rgb(232 235 240)
+    background-color: rgb(232 235 240);
+    cursor:pointer;
 }
 
 .filter-bar .filterBtn{

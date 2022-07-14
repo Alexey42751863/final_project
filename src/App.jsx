@@ -31,7 +31,7 @@ const App = () => {
   const filtering = () => {
     let newFilter = cars 
     setFilteredData(newFilter.filter(el => {
-      return (el.mark === (filterOptions.mark ? filterOptions.mark: el.mark )) && 
+      return (el.mark === (filterOptions.mark ? filterOptions.mark: el.mark )) &&
       (el.model === (filterOptions.model ? filterOptions.model: el.model )) &&
       (el.carBody === (filterOptions.carBody ? filterOptions.carBody: el.carBody )) && 
       (el.steeringWheel === (filterOptions.steeringWheel ? filterOptions.steeringWheel: el.steeringWheel ))&& 
@@ -42,11 +42,10 @@ const App = () => {
       (el.city === (filterOptions.city ? filterOptions.city: el.city )) &&
       (+el.date >= (filterOptions.dateOfStart ? +filterOptions.dateOfStart: 1990 ) && 
       (+el.date <= (filterOptions.dateOfEnd ? +filterOptions.dateOfEnd: el.date))) &&
-      (+el.priceDolor >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart: 0) && 
-      (+el.priceDolor <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd: el.priceDolor ))) &&
+      (+el.priceDollar >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart: 0) && 
+      (+el.priceDollar <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd: el.priceDollar ))) &&
       (el.clearance === (filterOptions.clearance ? filterOptions.clearance: el.clearance ))
     }))
-    
   }
 
   const filterFunc = (key, value) => {

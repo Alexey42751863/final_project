@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 
-const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSelectOption, removeFilterOption }) => {
+const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
   const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [params, setParams] = useState(options.mark)
+  const [searchValue, setSearchValue] = useState('')
 
   const handleClickOption = (e) => {
-    setModels([...handleSelectMark(e)])
+    setSearchValue('')
+    setParams(options.mark)
+    setOptions(options, options.model = [...handleSelectMark(e)])
     setActivTitle(e.target.innerText)
     setIsActive(true)
     setIsOpen(!isOpen)
@@ -15,11 +19,17 @@ const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSel
   }
 
   const handleCloseBtn = (e) => {
-    // console.log(e.target.parentElement.parentElement.innerText.slice(0, -3));
-    // let key = e.target.parentElement.parentElement.innerText.slice(0, -3)
+    setSearchValue('')
+    setParams(options.mark)
     removeFilterOption('mark')
     setActivTitle(title)
     setIsActive(false)
+  }
+
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value)
+    let arr = options.mark
+    setParams(arr.filter(el => el.toLowerCase().includes(e.target.value.toLowerCase())))
   }
 
   return (
@@ -31,9 +41,9 @@ const FilterMark = ({ title, id, options, handleSelectMark, setModels, handleSel
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
-        <input type="text" />
+        <input type="text" onChange={handleSearchChange} value={searchValue} />
         {
-          options.map((el, index) => <div
+          params.map((el, index) => <div
             key={index}
             id={id}
             onClick={handleClickOption}
