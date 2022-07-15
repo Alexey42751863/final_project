@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 // import { useState, useEffect } from 'react'
 // import axios from 'axios'
 const AboutCar = () => {
+  const [car, setCar] = useState([]);
+//   const getCarsData = async () => {
+//     const response = await fetch('http://localhost:3000/cars');
+//     console.log(response);
+//     return response.json();
+// }
+// useEffect(() => {
+//   fetch('http://localhost:3000/cars')
+//         .then(response => response.json())
+//         .then(data => setCar( data));
+// }, []);
+// useEffect(() => {
+//   getCarsData().then(data => {
+//       setCar({data});
+//       console.log(car);
+//   });
+// }, []);
   // const [ cars, setCars ] = useState([])
   // const [ loading, seLoading] = useState(false)
   // const [ currentPage, setCurrentPage] = useState(1)
@@ -14,10 +31,12 @@ const AboutCar = () => {
   //     const res = await axios.get('')
   //     console.log(res);
   //   }
-  // }
+  // } 
   // )
   return (
-    <div className='aboutcar'>
+    <>
+   
+      <div className='aboutcar' >
         <div className='img'>
             <img src="https://auto.am/static/offers/2786271/s-5c3af6203cf07785dc86935c9409be7d.jpg" alt="" />
         </div>
@@ -32,6 +51,8 @@ const AboutCar = () => {
             <button className='btn'>Գնիր վարկով</button>.
         </div>
     </div>
+    
+    </>
   )
 }
 
