@@ -97,3 +97,21 @@
 .CarsPage .carsHeaderContainer .carsHeader .carsIcons{
     flex-grow: 1;
 }
+
+
+.CarsPage .carsHeaderContainer .content{
+    margin: 0;
+    align-items: center;
+}
+
+
+.CarsPage .carsHeaderContainer .content .contentDiv{    
+    background-color: aqua;
+    width: calc(100% - 20px);
+    height: 126px;
+    margin: 10px ;
+}
+
+.CarsPage .carsHeaderContainer .content .contentDiv:hover{
+    box-shadow: 0px 3px 8px rgb(180 184 189);
+}
