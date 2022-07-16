@@ -25,6 +25,18 @@ const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSe
     removeFilterOption('mark')
     setActivTitle(title)
     setIsActive(false)
+    // useEffect(() => {
+    //   let handler = (event) => {
+    //     if (event.target.className == 'App') {
+    //       setIsActive(false)
+    //     }
+  
+    //   }
+    //   document.addEventListener("mousedown", handler)
+    //   return () => {
+    //     document.removeEventListener("mousedown", handler)
+    //   }
+    // })
   }
 
   const handleSearchChange = (e) => {
