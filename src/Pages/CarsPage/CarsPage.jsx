@@ -3,13 +3,22 @@ import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { FaRegTimesCircle } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
 import { useState } from 'react';
-import AboutCar from './AboutCar';
 
 const CarsPage = () => {
-    // const onClickFunc=(e)=>{
-    //   e.target.classList.add('hidden');
-    //   console.log(e.target);
-    // }
+    const [open, setOpen] = useState(false)
+
+    const onClickFunc = () => {
+        if (open === false) {
+            setOpen(true);
+        } else setOpen(false)
+    }
+
+    let data = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+    ]
+
     return (
         <div className='CarsPage'>
             <nav className='carsNavbar'>
@@ -351,7 +360,9 @@ const CarsPage = () => {
                     </div>
                     <div className='carsIcons'>icons</div>
                 </header>
-                <AboutCar />
+                <div className="content">
+                    {data.map((el) => <div className='contentDiv'>{el}</div>)}
+                </div>
             </div>
         </div>
     )
