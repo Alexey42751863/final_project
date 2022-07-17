@@ -5,8 +5,9 @@ import {BsSearch} from 'react-icons/bs';
 import { useState } from 'react';
 import AboutCar from '../AboutCar';
 
-const CarsPage = () => {
+const CarsPage = ({prop}) => {
     const [open,setOpen]=useState(false)
+    console.log(prop);
 
     const onClickFunc=()=>{
         if(open===false){

@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import FilterMark from './FilterMark'
 import FilterModel from './FilterModel'
 import FilterCountry from './FilterCountry'
 import FilterCity from './FilterCity'
 import Filter from './Filter'
+
 
 const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     const [filteredCars, setFilteredCars] = useState([])
@@ -66,13 +68,14 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         title === 'priceOfStart' || title === 'priceOfEnd' ? filterFunc(title, e.target.outerText.slice(1)) : filterFunc(title, e.target.outerText)
     }
 
-    const handleFilterBtn = () => {
-
-    }
-
     const handleClearance = (e) => {
         e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
     }
+
+    // const handleFilterBtn = () => {
+    //     console.log(1);
+    //     return (<Link to={'/cars'}></Link>)
+    // }
 
     return (
         <div className='filter-bar'>
@@ -210,7 +213,11 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                     {!isHideRows ? 'հասարակ որոնում' : 'ընդլայնված որոնում'}
                 </div>
             </div>
-            <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
+            <Link to={'/cars'} prop={'prop'}>
+                <button className='filterBtn'> Բոլոր {suggestions} առաջարկները </button>
+            </Link>
+            <Route path='/cars' element={<CarsPage />}/>
+
         </div>
     )
 }
