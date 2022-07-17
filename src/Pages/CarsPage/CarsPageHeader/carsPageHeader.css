@@ -1,0 +1,52 @@
+ .carsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    gap: 20px;
+    font-size: 15px;
+    color: #727272;
+}
+.carsHeader .filterByType{
+    border: 1px solid rgb(236, 223, 223);
+    border-radius: 5px;
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.carsHeader .buyers{
+    flex-grow: 2;
+    display: flex;
+    gap: 15px;
+}
+.carsHeader .buyers input{
+   width: 22px;
+   height: 22px;
+}
+.carsHeader .carsIcons{
+    flex-grow: 1;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.carsHeader .carsIcons .frame{
+    width: 40px;
+    background:#fff;
+    padding: 6px;
+    text-align: center;
+}
+.carsHeader .carsIcons .frame.select{
+    background: #1172B6;
+}
+.carsHeader .carsIcons .menu{
+    width: 24px;
+    height: 24px;
+    color: #1172B6;
+}
+.carsHeader .carsIcons .menu.select{
+    color: white;
+}

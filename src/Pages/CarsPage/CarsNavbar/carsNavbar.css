@@ -1,0 +1,79 @@
+.carsNavbar{
+    width: 22%;
+    font-size: 16px;
+}
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+.carsNavbar input[type=checkbox]{
+    width: 22px;
+    height: 22px;
+}
+.carsNavbar .filterParams.datePrice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.carsNavbar .filterParams .place{
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    align-items: center;
+}
+.carsNavbar .filterParams.datePrice input{
+    border: #727272 1px solid;
+    padding: 5px;
+    width: 48%;
+}
+.carsNavbar .params{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0d7d7;
+    padding: 10px;
+}
+.carsNavbar .params :not(:first-child){
+    margin-top: 10px;
+}
+.carsNavbar .filterParams p{
+    width: 95%;
+    height: 27px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px;
+    margin-top: 5px;
+}
+.carsNavbar .upIcon{
+    display: none;
+}
+.carsNavbar .findClose{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 20px;
+}
+.carsNavbar .findClose .findSpan{
+    background-color: #1172b6;
+    text-align: center;
+    padding: 20px 25px;
+    width: 80%;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    gap: 5px;
+}
+.carsNavbar .findClose .closeSpan{
+    font-size: 38px;
+    color: #fff;
+    background: #000;
+    /* text-align: center; */
+    padding: 9px 10px 4px 10px;
+    border-radius: 5px;
+}
