@@ -30,6 +30,7 @@ h1{
 .arrows{
      display: flex;
      gap: 10px;
+     align-items: center;
 }
 
 .arrows .btn{

@@ -38,9 +38,9 @@ const Slider = ({ title, cars = [] }) => {
                 <div className="command_line">
                     <h1>{title}</h1>
                     <div className="arrows">
-                        <button onClick={nextPage} className="btn"><i class="fa-solid fa-chevron-left"></i></button>
-                        <br />
-                        <button onClick={prevPage} className="btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        <span>{pageNumber+1}/4</span>
+                        <button onClick={prevPage} className="btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button onClick={nextPage} className="btn"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
                 <div>
