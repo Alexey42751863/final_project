@@ -5,9 +5,10 @@
     min-width: 980px;
     width: 80%;
     margin: 0 auto;
+    margin-top: 150px;
 }
 .CarsPage .carsNavbar{
-    width: 18%;
+    width: 20%;
     font-size: 16px;
 }
 .CarsPage .carsNavbar .params{
@@ -54,9 +55,11 @@
     border-radius: 5px;
     font-size: 18px;
     color: #fff;
+    display: flex;
+    gap: 5px;
 }
 .CarsPage .carsNavbar .findClose .closeSpan{
-    font-size: 41px;
+    font-size: 38px;
     color: #fff;
     background: #000;
     /* text-align: center; */

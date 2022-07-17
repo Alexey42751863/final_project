@@ -6,6 +6,7 @@ import FilterModel from './FilterModel'
 import FilterCountry from './FilterCountry'
 import FilterCity from './FilterCity'
 import Filter from './Filter'
+import Pagination from '../Pagination'
 
 
 const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
@@ -72,10 +73,9 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
     }
 
-    // const handleFilterBtn = () => {
-    //     console.log(1);
-    //     return (<Link to={'/cars'}></Link>)
-    // }
+    const handleFilterBtn = () => {
+
+    }
 
     return (
         <div className='filter-bar'>
@@ -213,11 +213,9 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                     {!isHideRows ? 'հասարակ որոնում' : 'ընդլայնված որոնում'}
                 </div>
             </div>
-            <Link to={'/cars'} prop={'prop'}>
-                <button className='filterBtn'> Բոլոր {suggestions} առաջարկները </button>
-            </Link>
-            <Route path='/cars' element={<CarsPage />}/>
+            <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
 
+            {/* <Pagination filteredData={filteredData} /> */}
         </div>
     )
 }

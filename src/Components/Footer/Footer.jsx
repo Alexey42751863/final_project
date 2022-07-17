@@ -6,10 +6,10 @@ const Footer = () => {
     <div className='footer'>
         <div className="footer_menu">
             <a href="#">Նախագծի մասին</a>
-            <a href="#">Օգտագործման կանոնները</a>
-            <a href="#">Գովազդ կայքում</a>
-            <a href="#">Օգնություն</a>
-            <a href="#">Կապ</a>
+            <a href="/terms_of_use">Օգտագործման կանոնները</a>
+            <a href="/advertising">Գովազդ կայքում</a>
+            <a href="/help">Օգնություն</a>
+            <a href="/contact">Կապ</a>
         </div>
         <div className="footer_logo">
             <div className="logo">

@@ -1,18 +1,19 @@
 import React from 'react'
 
-const CarItem = () => {
+const CarItem = ({ car }) => {
+
   return (
-    <div className="carItem">
-      <div className='obshi'> 
-        <div className='img'><img src='https://auto.am/static/offers/2780145/s-41ea75e1d6112e34b381077f6b5aacd4.jpg'/></div>
+    car && <div className="carItem">
+      <div className='obshi'>
+        <img src={car.imgUrls[0]} alt="car_image" />
         <div className="info">
           <div className=' arajTox'>
-             <p> car.mark</p> 
-             <p>car.model</p>
+            <span>{car.mark}</span>
+            <span>{car.model}</span>
           </div>
-          <div className=' Ekrordtox'> 
-            <p> car.date</p>  
-            <p>car.priceDolor</p>
+          <div className=' Ekrordtox'>
+            <p>{car.date}</p>
+            <p>{car.priceDollar}</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,46 @@
+.slider_container{
+     max-width: 1200px;
+     width: 100%;
+     margin: 30px auto;
+}
+
+.slider_item{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 20px;
+}
+
+h1{
+     margin-bottom: 20px;
+}
+
+.photo{
+     width: 200px;
+     height: 200px;
+     /* border: 1px solid black; */
+     box-sizing: border-box;
+}
+
+.command_line{
+     display: flex;
+     justify-content: space-between;
+}
+
+.arrows{
+     display: flex;
+     gap: 10px;
+}
+
+.arrows .btn{
+     background: none;
+     cursor: pointer;
+}
+
+.slider_item .show{
+     display: block;
+}
+
+.hide{
+     display: none;
+}
