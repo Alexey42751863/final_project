@@ -1,0 +1,10 @@
+.filterParams{
+    margin-bottom: 20px;
+    display: none;
+} 
+.LeftBar .show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
