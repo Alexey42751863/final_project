@@ -13,7 +13,7 @@ import TermsOfUse from './Pages/TermsOfUse'
 import Footer from './Components/Footer'
 import DetailsPage from './Pages/Details'
 import CarsPage from './Pages/CarsPage'
-import CarItem from './Components/CarItem'
+import CarItem from './Components/Slider/CarItem'
 
 const App = () => {
   const [cars, setCars] = useState([])

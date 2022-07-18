@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import './slider.css'
-import CarItem from '../CarItem'
+import CarItem from './CarItem'
 
 const Slider = ({ title, cars = [] }) => {
     const [slider, setSlider] = useState([])
