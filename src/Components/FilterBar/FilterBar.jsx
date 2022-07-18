@@ -6,8 +6,6 @@ import FilterModel from './FilterModel'
 import FilterCountry from './FilterCountry'
 import FilterCity from './FilterCity'
 import Filter from './Filter'
-import Pagination from '../Pagination'
-
 
 const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     const [filteredCars, setFilteredCars] = useState([])
@@ -215,7 +213,6 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
             </div>
             <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
 
-            {/* <Pagination filteredData={filteredData} /> */}
         </div>
     )
 }

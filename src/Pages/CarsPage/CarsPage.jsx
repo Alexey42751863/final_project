@@ -1,17 +1,19 @@
 import React from 'react';
 import CarsPageHeader from './CarsPageHeader';
-// import AboutCar from './AboutCar';
 import CarsNavbar from './CarsNavbar';
+import CarsList from './CarsList';
 
 const CarsPage = () => {
-   return (
+    return (
         <div className='CarsPage'>
-            <CarsNavbar/>
+            <CarsNavbar />
             <div className="carsHeaderContainer">
-            <CarsPageHeader/>
-            {/* <AboutCar /> */}
+                <CarsPageHeader />
+                <CarsList />
             </div>
         </div>
     )
 }
 export default CarsPage
+
+

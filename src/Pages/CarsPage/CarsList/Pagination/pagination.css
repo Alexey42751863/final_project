@@ -1,0 +1,13 @@
+.page-item{
+    display: inline-block;
+}
+
+.page-item .pagespannk{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+   
+} 
+
+.page-item a:hover:not(.active) {background-color: rgb(129, 90, 90);}
