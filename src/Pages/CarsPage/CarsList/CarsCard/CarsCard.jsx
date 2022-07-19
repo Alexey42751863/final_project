@@ -1,32 +1,50 @@
 import React from 'react'
+import './carsCard.css'
 
-const CarsCard = () => {
+const CarsCard = ({ car }) => {
   return (
-    <div className="CarsCard">
-      <div className='obshi'> 
-        <div className='img'><img src='https://auto.am/static/offers/2699520/s-c275af1ca984873e4988db5b0592fba1.jpg'/></div>
-        <div className="obshi_item">
-          <div className="info">
-            <div className='arajTox'>
-              <p className='date'> car.date</p> 
-              <p> car.mark</p> 
-              <p>car.model</p>
-            </div>
-          </div>
-          <div className="about">
-            <p><span>250000 կմ</span> , Մինիվեն / Միկրոավտոբուս, Ավտոմատ, Աջ, Բենզին, Սպիտակ, ABS, EBD</p>
-            <div className="about_item">
-              <span className="date">15.07.2022</span>
-              <span className="country">Հայաստան,</span>
-              <span className="maqs">Մաքսազերծված է</span>
-            </div>
+    <div className='carsCard'>
+      <div className='img'>
+        <img src={car.imgUrls[0]} alt='car_image' />
+      </div>
+      <div className="obshi_item">
+        <div className="info">
+          <div className='arajTox'>
+            <p className='date'> {car.date}</p>
+            <p>{car.mark}</p>
+            <p>{car.model}</p>
           </div>
         </div>
-        <div className="price">
-              <p>car.priceDollar</p>
+        <div className="about">
+          <p>
+            <span>
+              {car.mileage}{(car.country === 'Հայաստան') ? 'կմ, ' : 'մղոն, '}
+            </span>
+            <span>
+              {car.gearbox + ', '}
+            </span>
+            <span>
+              {car.steeringWheel + ', '}
+            </span>
+            <span>
+              {car.mator + ', '}
+            </span>
+            <span>
+              {car.color}
+            </span>
+          </p>
+          <div className="about_item">
+            <span className="date">15.07.2022</span>
+            <span className="country">{car.country}, {car.city && car.city}</span>
+            {(car.clearance === 'true') ? <span className="maqs">Մաքսազերծված է</span> : <span className="maqs no">Մաքսազերծված չէ</span>}
           </div>
+        </div>
+      </div>
+      <div className="price">
+        <p>{car.priceDollar ? '$ ' + car.priceDollar : car.priceDram}</p>
       </div>
     </div>
+
   )
 }
 

@@ -3,13 +3,13 @@ import CarsPageHeader from './CarsPageHeader';
 import CarsNavbar from './CarsNavbar';
 import CarsList from './CarsList';
 
-const CarsPage = () => {
+const CarsPage = ({filteredData}) => {
     return (
         <div className='CarsPage'>
             <CarsNavbar />
             <div className="carsHeaderContainer">
                 <CarsPageHeader />
-                <CarsList />
+                <CarsList filteredData={filteredData}/>
             </div>
         </div>
     )
