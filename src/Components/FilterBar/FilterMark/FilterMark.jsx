@@ -12,6 +12,7 @@ const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSe
   const handleClickOption = (e) => {
     setSearchValue('')
     setParams(options.mark)
+    console.log(handleSelectMark(e));
     setOptions(options, options.model = [...handleSelectMark(e)])
     setActivTitle(e.target.innerText)
     setIsActive(true)

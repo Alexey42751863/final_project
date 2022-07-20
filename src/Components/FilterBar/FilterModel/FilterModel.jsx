@@ -46,7 +46,7 @@ const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOptio
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
         <input type="text" onChange={handleSearchChange} value={searchValue}/>
         {
-          params.map((el, index) => <div
+          params.length > 0 && params.map((el, index) => <div
             key={index}
             id={id}
             onClick={handleClickOption}

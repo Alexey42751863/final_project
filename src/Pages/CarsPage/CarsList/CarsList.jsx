@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import CarsCard from './CarsCard/CarsCard';
 import Pagination from './Pagination'
+import { Link } from 'react-router-dom';
 
-const CarsList = ({filteredData}) => {
+const CarsList = ({ filteredData }) => {
     // let data = [
     //     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
     //     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -23,10 +24,14 @@ const CarsList = ({filteredData}) => {
 
     return (
         <div>
-            <div className="carsList">                
-                {currentCar.map((el, index) => <CarsCard key={index} car={el}/>)}
+            <div className="carsList">
+                {currentCar.map((el, index) => {
+                    return <Link to={'/detail/' + el.id}>
+                        <CarsCard key={index} car={el} />
+                    </Link>
+                })}
             </div>
-            <Pagination changePageNumber={changePageNumber} filteredData={filteredData} currentPage={currentPage}/>
+            <Pagination changePageNumber={changePageNumber} filteredData={filteredData} currentPage={currentPage} />
 
         </div>
     )

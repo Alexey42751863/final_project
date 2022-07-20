@@ -2,6 +2,16 @@ import React from 'react'
 import './carsCard.css'
 
 const CarsCard = ({ car }) => {
+  const getDateNow = () => {
+    let date = new Date()
+    let day = date.getDate()
+    day = (Math.floor(day / 10) === 0) ? '0' + day : day
+    let month = date.getMonth() + 1
+    month = (Math.floor(month / 10) === 0) ? '0' + month : month
+    let year = date.getFullYear()
+    return (day + '.' + month + '.' + year)
+  }
+
   return (
     <div className='carsCard'>
       <div className='img'>
@@ -34,7 +44,7 @@ const CarsCard = ({ car }) => {
             </span>
           </p>
           <div className="about_item">
-            <span className="date">15.07.2022</span>
+            <span className="date">{getDateNow()}</span>
             <span className="country">{car.country}, {car.city && car.city}</span>
             {(car.clearance === 'true') ? <span className="maqs">Մաքսազերծված է</span> : <span className="maqs no">Մաքսազերծված չէ</span>}
           </div>

@@ -27,6 +27,11 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         priceOfStart: [],
         priceOfEnd: []
     })
+    const [model, setModel] = useState([])
+
+    useEffect(() => {
+        setModel(options.model)
+    }, [options.model])
 
     useEffect(() => {
         setOptions(options, options.dateOfStart = [...genOptions(1990, 2022)])
@@ -49,13 +54,15 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     }
 
     const handleSelectMark = (e) => {
-        setFilteredCars(cars.filter(el => el[e.target.id] === e.target.outerText))
-        return new Set(filteredCars.map(el => el.model))
+        let arr = cars.filter(el => el[e.target.id] === e.target.outerText)
+        setFilteredCars(arr)
+        return new Set(arr.map(el => el.model))
     }
 
     const handleSelectCity = (e) => {
-        setFilteredCars(cars.filter(el => el[e.target.id] === e.target.outerText))
-        return new Set(filteredCars.map(el => el.city).filter(el => el != false))
+        let arr = cars.filter(el => el[e.target.id] === e.target.outerText)
+        setFilteredCars(arr)
+        return new Set(arr.map(el => el.city).filter(el => el != false))
     }
 
     const openfilterfunc = () => {
@@ -69,10 +76,6 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
 
     const handleClearance = (e) => {
         e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
-    }
-
-    const handleFilterBtn = () => {
-
     }
 
     return (
@@ -93,7 +96,7 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                     <FilterModel
                         title={'Մոդելը'}
                         id={'model'}
-                        options={options.model}
+                        options={model}
                         handleSelectOption={handleSelectOption}
                         removeFilterOption={removeFilterOption}
                     />
@@ -212,7 +215,7 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                 </div>
             </div>
             <Link to={'/cars'} >
-                <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
+                <button className='filterBtn'> Բոլոր {suggestions} առաջարկները </button>
             </Link>
         </div>
     )
