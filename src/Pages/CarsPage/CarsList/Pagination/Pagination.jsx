@@ -4,7 +4,6 @@ import CarsPage from '../../CarsPage';
 
 const Pagination = ({ filteredData, changePageNumber, currentPage }) => {
     const [pageNumbers, setPageNumbers] = useState([]);
-    console.log(filteredData);
 
     useEffect(() => {
         let arr = []

@@ -17,49 +17,49 @@ const MainContentInfo = ({ car }) => {
                 </div>
             </div>
             <div className='carinfo'>
-                <div className="rows">
+                {car.mileage && <div className="rows">
                     <p>Վազքը</p>
                     <p>{car.mileage}</p>
-                </div>
-                <div className="rows">
+                </div>}
+                {car.carBody && <div className="rows">
                     <p>Թափքը</p>
-                    <p>{car["carBody"]}</p>
-                </div>
+                    <p>{car.carBody}</p>
+                </div>}
 
-                <div className="rows">
+                {car.gearbox && <div className="rows">
                     <p>Փոխանցման տուփը</p>
                     <p>{car.gearbox}</p>
-                </div>
+                </div>}
 
-                <div className="rows">
+                {car.steeringWheel && <div className="rows">
                     <p>Ղեկը</p>
-                    <p>{car["steeringWheel"]}</p>
-                </div>
+                    <p>{car.steeringWheel}</p>
+                </div>}
 
-                <div className="rows">
+                {car.mator && <div className="rows">
                     <p>Շարժիչը</p>
                     <p>{car.mator}</p>
-                </div>
-                <div className="rows">
+                </div>}
+                {car.color && <div className="rows">
                     <p>Գույնը</p>
                     <p>{car.color}</p>
-                </div>
-                {car["matorValue"] ? <div className="rows">
+                </div>}
+                {car.matorValue && <div className="rows">
                     <p>Շարժիչի ծավալը</p>
-                    <p>{car["matorValue"]}</p>
-                </div> : ''}
-                {car.tug ? <div className="rows">
+                    <p>{car.matorValue}</p>
+                </div>}
+                {car.tug && <div className="rows">
                     <p>Քարշակը</p>
                     <p>{car.tug}</p>
-                </div> : ''}
-                {car.options ? <div className="rows add">
+                </div>}
+                {car.options && <div className="rows add">
                     <h2>Օպցիաներ</h2>
                     <p>{car.options}</p>
-                </div> : ''}
-                {car.additional ? <div className="rows add">
+                </div>}
+                {car.additional && <div className="rows add">
                     <h2>Լրացուցիչ</h2>
                     <p>{car.additional}</p>
-                </div> : ''}
+                </div>}
 
             </div>
         </div>

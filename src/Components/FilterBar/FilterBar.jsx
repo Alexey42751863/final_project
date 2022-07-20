@@ -27,12 +27,11 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         priceOfStart: [],
         priceOfEnd: []
     })
-    const [model, setModel]= useState([])
+    const [model, setModel] = useState([])
 
     useEffect(() => {
-        console.log(options.model);
         setModel(options.model)
-    },[options.model])
+    }, [options.model])
 
     useEffect(() => {
         setOptions(options, options.dateOfStart = [...genOptions(1990, 2022)])
@@ -77,10 +76,6 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
 
     const handleClearance = (e) => {
         e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
-    }
-
-    const handleFilterBtn = () => {
-
     }
 
     return (
@@ -220,8 +215,7 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                 </div>
             </div>
             <Link to={'/cars'} >
-                <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
-
+                <button className='filterBtn'> Բոլոր {suggestions} առաջարկները </button>
             </Link>
         </div>
     )
