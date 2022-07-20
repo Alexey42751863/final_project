@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './slider.css'
 import CarItem from './CarItem'
 
@@ -38,41 +39,73 @@ const Slider = ({ title, cars = [] }) => {
                 <div className="command_line">
                     <h1>{title}</h1>
                     <div className="arrows">
-                        <span>{pageNumber+1}/4</span>
+                        <span>{pageNumber + 1}/4</span>
                         <button onClick={prevPage} className="btn"><i class="fa-solid fa-chevron-left"></i></button>
                         <button onClick={nextPage} className="btn"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
                 <div>
                     <div className={pageNumber === 0 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index < 5 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index < 5 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                     <div className={pageNumber === 0 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 5 && index < 10 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 5 && index < 10 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                 </div>
                 <div>
                     <div className={pageNumber === 1 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 10 && index < 15 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 10 && index < 15 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                     <div className={pageNumber === 1 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 15 && index < 20 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 15 && index < 20 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                 </div>
                 <div>
                     <div className={pageNumber === 2 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 20 && index < 25 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 20 && index < 25 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                     <div className={pageNumber === 2 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 25 && index < 30 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 25 && index < 30 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                 </div>
                 <div>
                     <div className={pageNumber === 3 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 30 && index < 35 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 30 && index < 35 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                     <div className={pageNumber === 3 ? " slider_item show" : " slider_item hide"}>
-                        {slider.map((el, index) => index >= 35 && index < 40 && <div className="photo" key={index}><CarItem car={el} /></div>)}
+                        {slider.map((el, index) => index >= 35 && index < 40 && <div className="photo" key={index}>
+                            <Link to={'/detail/'+ el.id}>
+                                <CarItem car={el} />
+                            </Link>
+                        </div>)}
                     </div>
                 </div>
             </div>
