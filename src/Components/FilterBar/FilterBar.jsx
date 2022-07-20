@@ -211,8 +211,9 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
                     {!isHideRows ? 'հասարակ որոնում' : 'ընդլայնված որոնում'}
                 </div>
             </div>
-            <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
-
+            <Link to={'/cars'} >
+                <button className='filterBtn' onClick={handleFilterBtn}> Բոլոր {suggestions} առաջարկները </button>
+            </Link>
         </div>
     )
 }

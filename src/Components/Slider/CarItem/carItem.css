@@ -1,39 +1,41 @@
-.obshi {
+
+
+.carItem .obshi {
     max-width: 200px;
     box-shadow: 0px 3px 8px rgb(180 184 189 / 15%);
     border-radius: 4px;
 }
 
-img {
+.carItem img {
     /* border: 1px solid red; */
     height: 150px;
     width: 200px;
 }
 
-.info {
+.carItem .info {
     padding: 10px;
 }
 
-.arajTox,
-.Ekrordtox {
+.carItem .arajTox,
+.carItem .Ekrordtox {
     display: flex;
     align-items: center;
 }
 
-.arajTox {
+.carItem .arajTox {
     gap: 10px;
 }
 
-.arajTox p {
+.carItem .arajTox p {
     color: #1172b6 !important;
     text-transform: uppercase;
 }
 
-.Ekrordtox {
+.carItem .Ekrordtox {
     justify-content: space-between;
 }
 
-.obshi:hover {
+.carItem .obshi:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
