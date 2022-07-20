@@ -4,6 +4,7 @@ import CarsPage from '../../CarsPage';
 
 const Pagination = ({ filteredData = [], changePageNumber }) => {
     const [pageNumbers, setPageNumbers] = useState([]);
+    const [openPage,setOpenPage] = useState(!false)
 
     useEffect(() => {
         let arr = []
@@ -12,13 +13,19 @@ const Pagination = ({ filteredData = [], changePageNumber }) => {
         }
         setPageNumbers(arr)
     }, [CarsPage])
+   
+    const change= function (event) {
+        const pageNumber = Number(event.target.textContent)+1;
+        changePageNumber(pageNumber);
+        setOpenPage(pageNumber)
+    }
 
     return (
         <div className='pagination'>
             {
-                pageNumbers.map(num => {
+                pageNumbers.map((item,num) => {
                     return <span className='page-item' key={num}>
-                        <a href="#" className='pagespannk' onClick={() => changePageNumber(num)}>
+                        <a href="#" className={`page-item pagespannk ${openPage === item ? 'active' : null}`} onClick={change}>
                             {num}
                         </a>
                     </span>
