@@ -28,7 +28,7 @@ const CarsCard = ({ car }) => {
         <div className="about">
           <p>
             <span>
-              {car.mileage}{(car.country === 'Հայաստան') ? 'կմ, ' : 'մղոն, '}
+              {car.mileage}{(car.country === 'Հայաստան') ? ' կմ, ' : ' մղոն, '}
             </span>
             <span>
               {car.gearbox + ', '}

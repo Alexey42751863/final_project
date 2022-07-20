@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
-const Header = ({searchValue, setSearchValue, searching}) => {
+const Header = ({ searchValue, setSearchValue, searching, filteredData, handleClickSearchItem }) => {
 
   const [openM, setOpenM] = useState(false)
   const showSideBarM = () => setOpenM(true)
@@ -15,7 +15,6 @@ const Header = ({searchValue, setSearchValue, searching}) => {
       if (event.target.className == 'massageBar open') {
         setOpenM(false)
       }
-
     }
     document.addEventListener("mousedown", handlerM)
     return () => {
@@ -29,7 +28,13 @@ const Header = ({searchValue, setSearchValue, searching}) => {
         <Navbar showSideBarM={showSideBarM} />
         <Link className='logo' to={'/'}></Link>
       </div>
-      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} searching={searching}/>
+      <SearchBar
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        searching={searching}
+        filteredData={filteredData}
+        handleClickSearchItem={handleClickSearchItem}
+      />
       <div className='diler'>
         <i className="fa-solid fa-car"></i>
         <i className="fa-solid fa-message" onClick={showSideBarM}></i>
