@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const SearchBar = ({ searchValue, setSearchValue, searching, filteredData, handleClickSearchItem }) => {
+const SearchBar = ({ searchValue, setSearchValue, filteredData, handleClickSearchItem }) => {
   const [arrForRender, setArrForRender] = useState([])
   const [isOpen, setIsOpen] = useState(false)
 
@@ -27,32 +28,47 @@ const SearchBar = ({ searchValue, setSearchValue, searching, filteredData, handl
     return random
   }
 
-  const handleChange = (e) => {
-    setSearchValue(e.target.value)
-  }
-
   return (
     <div className='searchBar'>
       <form >
-        <input type="text" placeholder='Մակնիշ, Մոդել, Տարեթիվ ' value={searchValue} onChange={handleChange} />
-        <button type='submit' onClick={searching}><i className="fa-solid fa-magnifying-glass" ></i></button>
+        <input
+          type="text"
+          placeholder='Մակնիշ, Մոդել, Տարեթիվ '
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <button
+          type='submit'
+          onClick={(e) => {
+            e.preventDefault()
+            setIsOpen(false)
+          }}
+        >
+          <Link to={'/cars'} >
+            <i className="fa-solid fa-magnifying-glass" ></i>
+          </Link>
+        </button>
+
       </form>
       {
         isOpen && (arrForRender.length !== 0) && <div className="dropDown">
-          {arrForRender.map((el, index) => <div
-            className='search_item'
-            key={index}
-            onClick={(e) => {
-              setSearchValue(e.target.outerText)
-              setTimeout(() => {
-                setIsOpen(false)
-              }, 0)
-              handleClickSearchItem(e)
-            }
-            }
-          >
-            {el}
-          </div>)}
+          {arrForRender.map((el, index) => <Link to={'/cars'} >
+            <div
+              className='search_item'
+              key={index}
+              onClick={
+                (e) => {
+                  setSearchValue(e.target.outerText)
+                  setTimeout(() => {
+                    setIsOpen(false)
+                  }, 0)
+                  handleClickSearchItem(e)
+                }
+              }
+            >
+              {el}
+            </div>
+          </Link>)}
         </div>
       }
     </div>

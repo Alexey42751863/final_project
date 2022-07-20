@@ -101,18 +101,6 @@ const App = () => {
     filtering()
   }
 
-  const searching = (e) => {
-    e.preventDefault()
-    // let arr = cars
-    // setFilteredData(
-    //   arr.filter(el => {
-    //     return el.mark.toLowerCase().includes(searchValue.toLowerCase()) ||
-    //     el.model.toLowerCase().includes(searchValue.toLowerCase()) ||
-    //     el.date.toLowerCase().includes(searchValue.toLowerCase())
-    //   })
-    // );
-  }
-
   const handleClickSearchItem = (e) => {
     setSearchKeys(e.target.outerText.split(' '))
   }
@@ -122,7 +110,6 @@ const App = () => {
       <Header
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        searching={searching}
         filteredData={filteredData}
         handleClickSearchItem={handleClickSearchItem}
       />

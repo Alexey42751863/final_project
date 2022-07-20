@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
-const Header = ({ searchValue, setSearchValue, searching, filteredData, handleClickSearchItem }) => {
+const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchItem }) => {
 
   const [openM, setOpenM] = useState(false)
   const showSideBarM = () => setOpenM(true)
@@ -31,7 +31,6 @@ const Header = ({ searchValue, setSearchValue, searching, filteredData, handleCl
       <SearchBar
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        searching={searching}
         filteredData={filteredData}
         handleClickSearchItem={handleClickSearchItem}
       />
