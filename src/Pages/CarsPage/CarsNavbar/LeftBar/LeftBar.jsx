@@ -16,7 +16,7 @@ const LeftBar = ({ title , list }) => {
             <div className={open?'filterParams show':'filterParams'}>
                 {list.map((el,index) => (
                     <p key={index}>
-                        <input type="checkbox" id={index} />
+                        <input type="checkbox"  id={index} />
                         <label htmlFor={index}>{el}</label>
                     </p>
                 ))}
