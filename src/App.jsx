@@ -106,7 +106,7 @@ const App = () => {
     setSearchKeys(e.target.outerText.split(' '))
   }
 
-  // console.log(filterOptions);
+  // console.log(searchValue);
 
   return (
     <div className='App'>
@@ -124,6 +124,7 @@ const App = () => {
               filterFunc={filterFunc}
               filteredData={filteredData}
               removeFilterOption={removeFilterOption}
+              searchValue={searchValue}
             />}
           />
           <Route path='/dealers' element={<Dealers />} />
@@ -139,6 +140,7 @@ const App = () => {
               filterOptions={filterOptions}
               setfilterOptions={setfilterOptions}
               filtering = {filtering}
+              setSearchValue={setSearchValue}
             />}
           />
           <Route path='/not' element={<NotFoundPage />} />

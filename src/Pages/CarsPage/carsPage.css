@@ -1,12 +1,12 @@
-.CarsPage{
+.CarsPage {
     display: flex;
     gap: 20px;
     max-width: 1260px;
     min-width: 980px;
     width: 80%;
     margin: 0 auto;
-    margin-top: 150px;
 }
-.CarsPage .carsHeaderContainer{
+
+.CarsPage .carsHeaderContainer {
     flex-grow: 3;
 }

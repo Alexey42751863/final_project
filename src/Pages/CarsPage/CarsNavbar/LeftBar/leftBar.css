@@ -2,6 +2,10 @@
     margin-bottom: 20px;
     display: none;
 } 
+
+.LeftBar .params:hover{
+    cursor: pointer;
+}
 .LeftBar .show{
     display: block;
 }

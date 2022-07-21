@@ -29,6 +29,7 @@
     border: #727272 1px solid;
     padding: 5px;
     width: 48%;
+    border-radius: 4px;
 }
 .carsNavbar .params{
     display: flex;

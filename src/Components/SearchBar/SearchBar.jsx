@@ -20,7 +20,7 @@ const SearchBar = ({ searchValue, setSearchValue, filteredData, handleClickSearc
   }, [filteredData])
 
   useEffect(() => {
-    searchValue && setIsOpen(true)
+    searchValue ? setIsOpen(true) : setIsOpen(false)
   }, [searchValue])
 
   const getRandom = (arr) => {

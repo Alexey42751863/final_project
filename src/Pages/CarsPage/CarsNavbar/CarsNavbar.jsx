@@ -5,48 +5,64 @@ import { FaRegTimesCircle } from 'react-icons/fa'
 import { BsSearch } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 
-const CarsNavbar = ({ filterOptions, setfilterOptions, filtering }) => {
+const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue }) => {
 
     const [markCheck, setMarkCheck] = useState('')
+    const [modelCheck, setModelCheck] = useState('')
+    const [dateOfStartValue, setDateOfStartValue] = useState('')
+    const [dateOfEndValue, setDateOfEndValue] = useState('')
     const [carBodyCheck, setCarBodyCheck] = useState('')
     const [matorCheck, setMatorCheck] = useState('')
     const [gearboxCheck, setGearboxCheck] = useState('')
     const [tugCheck, setTugCheck] = useState('')
     const [steeringWheelCheck, setSteeringWheelCheck] = useState('')
     const [countryCheck, setCountryCheck] = useState('')
+    const [cityCheck, setCityCheck] = useState('')
     
     const mark = ['Mercedes', 'Toyota', 'Nissan', 'BMW', 'Hyundai'];
+    const model = [];
     const carBody = ['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք'];
     const mator = ['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել'];
     const gearbox = ['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական'];
     const tug = ['Առջևի', 'Ետևի', 'Լիաքարշակ'];
     const steeringWheel = ['Ձախ', 'Աջ'];
     const country = ['Հայաստան', 'ԱՄՆ'];
+    const city = [];
+
+    // useEffect(() => {
+    //     setSearchValue('')
+    // }, [])
     
     useEffect(() => {
         filterOptions.mark && setMarkCheck(filterOptions.mark)
+        filterOptions.model && setModelCheck(filterOptions.model)
+        filterOptions.dateOfStart && setDateOfStartValue(filterOptions.dateOfStart)
+        filterOptions.dateOfEnd && setDateOfEndValue(filterOptions.dateOfEnd)
         filterOptions.carBody && setCarBodyCheck(filterOptions.carBody)
         filterOptions.mator && setMatorCheck(filterOptions.mator)
         filterOptions.gearbox && setGearboxCheck(filterOptions.gearbox)
         filterOptions.tug && setTugCheck(filterOptions.tug)
         filterOptions.steeringWheel && setSteeringWheelCheck(filterOptions.steeringWheel)
         filterOptions.country && setCountryCheck(filterOptions.country)
+        filterOptions.city && setCityCheck(filterOptions.city)
     },[filterOptions])
     
-    // console.log(markCheck);
     const handleCheckBox = (e, key) => {
-        console.log(e, key);
         if(filterOptions[key] === e){
             setfilterOptions(filterOptions, filterOptions[key] = '')
         }else setfilterOptions(filterOptions, filterOptions[key] = e)
         
         setMarkCheck(filterOptions.mark)
+        setModelCheck(filterOptions.model)
+        setDateOfStartValue(filterOptions.dateOfStart)
+        setDateOfEndValue(filterOptions.dateOfEnd)
         setCarBodyCheck(filterOptions.carBody)
         setMatorCheck(filterOptions.mator)
         setGearboxCheck(filterOptions.gearbox)
         setTugCheck(filterOptions.tug)
         setSteeringWheelCheck(filterOptions.steeringWheel)
         setCountryCheck(filterOptions.country)
+        setCityCheck(filterOptions.city)
         filtering()
     }
 
@@ -57,16 +73,16 @@ const CarsNavbar = ({ filterOptions, setfilterOptions, filtering }) => {
                 <p>Տարեթիվը</p><UpDown />
             </div>
             <div className='filterParams datePrice'>
-                <input type="number" min="1911" max="2022" placeholder="սկսած" />
-                <input type="number" min="1911" max="2022" placeholder="մինչև" />
+                <input type="number" id={'dateOfStart'} value={dateOfStartValue} min="1990" max="2022" placeholder="սկսած" onChange={(e) => handleCheckBox(e.target.value, e.target.id)}/>
+                <input type="number" id={'dateOfEnd'} value={dateOfEndValue} min="1990" max="2022" placeholder="մինչև" onChange={(e) => handleCheckBox(e.target.value, e.target.id)}/>
             </div>
             <div className='params'>
                 <p>Գինը</p> <UpDown />
             </div>
             <div >
                 <div className='filterParams datePrice'>
-                    <input type="number" placeholder="սկսած" />
-                    <input type="number" placeholder="մինչև" />
+                    <input type="number" id={'priceOfStart'} placeholder="սկսած" min="1000" step={1000} onChange={(e) => handleCheckBox(e.target.value, e.target.id)}/>
+                    <input type="number" id={'priceOfEnd'} placeholder="մինչև" min="1000" step={1000} onChange={(e) => handleCheckBox(e.target.value, e.target.id)}/>
                 </div>
                 <div className='filterParams'>
                     <p>
