@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
-import { AiOutlineDown ,AiOutlineUp } from 'react-icons/ai';
+import { useState, useEffect } from 'react'
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSelectOption, removeFilterOption }) => {
   const [activeTitle, setActivTitle] = useState(title)
@@ -12,7 +12,6 @@ const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSe
   const handleClickOption = (e) => {
     setSearchValue('')
     setParams(options.mark)
-    console.log(handleSelectMark(e));
     setOptions(options, options.model = [...handleSelectMark(e)])
     setActivTitle(e.target.innerText)
     setIsActive(true)
@@ -26,18 +25,7 @@ const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSe
     removeFilterOption('mark')
     setActivTitle(title)
     setIsActive(false)
-    // useEffect(() => {
-    //   let handler = (event) => {
-    //     if (event.target.className == 'App') {
-    //       setIsActive(false)
-    //     }
-  
-    //   }
-    //   document.addEventListener("mousedown", handler)
-    //   return () => {
-    //     document.removeEventListener("mousedown", handler)
-    //   }
-    // })
+    setOptions(options, options.model = [])
   }
 
   const handleSearchChange = (e) => {
@@ -47,11 +35,13 @@ const FilterMark = ({ title, id, options, handleSelectMark, setOptions, handleSe
   }
 
   return (
-    <div className='filter'>
+    <div className='filter' >
       <div className='button' onClick={() => setIsOpen(!isOpen)}>
         {activeTitle}
         <span>
-          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} <AiOutlineUp />
+          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>}
+          <AiOutlineDown className={isOpen ? 'hidden' : 'downIcon'} />
+          <AiOutlineUp className={isOpen ? 'upIcon' : 'hidden'} />
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>

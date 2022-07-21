@@ -40,11 +40,14 @@ const FilterModel = ({ title, id, options, handleSelectOption, removeFilterOptio
       <div className='button' onClick={() => setIsOpen(!isOpen)}>
         {activeTitle}
         <span>
-          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} <AiOutlineUp />
+          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} 
+          <AiOutlineDown className={isOpen?'hidden':'downIcon'}/>
+          <AiOutlineUp className={isOpen?'upIcon':'hidden'}/>
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>
         <input type="text" onChange={handleSearchChange} value={searchValue}/>
+        {params.length === 0 && <div>Անարդյունք</div>}
         {
           params.length > 0 && params.map((el, index) => <div
             key={index}

@@ -19,6 +19,7 @@ const FilterCountry = ({ title, id, options, handleSelectCity, setOptions, handl
     removeFilterOption('country')
     setActivTitle(title)
     setIsActive(false)
+    setOptions(options, options.city = []) 
   }
 
   return (
@@ -26,7 +27,9 @@ const FilterCountry = ({ title, id, options, handleSelectCity, setOptions, handl
       <div className='button' onClick={() => setIsOpen(!isOpen)}>
         {activeTitle}
         <span>
-          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} <AiOutlineUp />
+          {isActive && <span onClick={handleCloseBtn} className='closeBtn'> x </span>} 
+          <AiOutlineDown className={isOpen?'hidden':'downIcon'}/>
+          <AiOutlineUp className={isOpen?'upIcon':'hidden'}/>
         </span>
       </div>
       <div className={isOpen ? 'dropDown active' : 'dropDown'}>

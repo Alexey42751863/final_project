@@ -20,10 +20,50 @@ const App = () => {
   const [filteredData, setFilteredData] = useState([])
   const [filterOptions, setfilterOptions] = useState({})
   const [searchValue, setSearchValue] = useState('')
+  const [searchKeys, setSearchKeys] = useState([])
 
   useEffect(() => {
     loadCars()
   }, [])
+
+  useEffect(() => {
+    let arr = cars
+    let searchArr = []
+    let searchValues = searchValue.trim().split(' ')
+
+    searchValues.forEach((el, index) => {
+      if (index === 0) {
+        searchArr.push(
+          ...arr.filter(elem => {
+            return (
+              (elem.mark.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+              (elem.model.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+              (elem.date.toString().slice(0, el.length) === el)
+            )
+          })
+        )
+      } else {
+        searchArr = searchArr.filter(elem => {
+          return (
+            (elem.mark.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+            (elem.model.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+            (elem.date.toString().slice(0, el.length) === el)
+          )
+        })
+      }
+    })
+
+    setFilteredData(searchArr);
+    if (!searchValue) searchArr = []
+  }, [searchValue])
+
+  useEffect(() => {
+    setfilterOptions(filterOptions, filterOptions.dateOfStart = searchKeys[0])
+    setfilterOptions(filterOptions, filterOptions.dateOfEnd = searchKeys[0])
+    setfilterOptions(filterOptions, filterOptions.mark = searchKeys[1])
+    setfilterOptions(filterOptions, filterOptions.model = searchKeys[2])
+  }, [searchKeys])
+
 
   const loadCars = async () => {
     const result = await axios.get('http://localhost:3000/cars')
@@ -32,27 +72,27 @@ const App = () => {
   }
 
   const filtering = () => {
-    let newFilter = cars 
+    let newFilter = cars
     setFilteredData(newFilter.filter(el => {
-      return (el.mark === (filterOptions.mark ? filterOptions.mark: el.mark )) &&
-      (el.model === (filterOptions.model ? filterOptions.model: el.model )) &&
-      (el.carBody === (filterOptions.carBody ? filterOptions.carBody: el.carBody )) && 
-      (el.steeringWheel === (filterOptions.steeringWheel ? filterOptions.steeringWheel: el.steeringWheel ))&& 
-      (el.gearbox === (filterOptions.gearbox ? filterOptions.gearbox: el.gearbox )) &&
-      (el.mator === (filterOptions.mator ? filterOptions.mator: el.mator )) &&
-      (el.tug === (filterOptions.tug ? filterOptions.tug: el.tug )) &&
-      (el.country === (filterOptions.country ? filterOptions.country: el.country )) && 
-      (el.city === (filterOptions.city ? filterOptions.city: el.city )) &&
-      (+el.date >= (filterOptions.dateOfStart ? +filterOptions.dateOfStart: 1990 ) && 
-      (+el.date <= (filterOptions.dateOfEnd ? +filterOptions.dateOfEnd: el.date))) &&
-      (+el.priceDollar >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart: 0) && 
-      (+el.priceDollar <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd: el.priceDollar ))) &&
-      (el.clearance === (filterOptions.clearance ? filterOptions.clearance: el.clearance ))
+      return (el.mark === (filterOptions.mark ? filterOptions.mark : el.mark)) &&
+        (el.model === (filterOptions.model ? filterOptions.model : el.model)) &&
+        (el.carBody === (filterOptions.carBody ? filterOptions.carBody : el.carBody)) &&
+        (el.steeringWheel === (filterOptions.steeringWheel ? filterOptions.steeringWheel : el.steeringWheel)) &&
+        (el.gearbox === (filterOptions.gearbox ? filterOptions.gearbox : el.gearbox)) &&
+        (el.mator === (filterOptions.mator ? filterOptions.mator : el.mator)) &&
+        (el.tug === (filterOptions.tug ? filterOptions.tug : el.tug)) &&
+        (el.country === (filterOptions.country ? filterOptions.country : el.country)) &&
+        (el.city === (filterOptions.city ? filterOptions.city : el.city)) &&
+        (+el.date >= (filterOptions.dateOfStart ? +filterOptions.dateOfStart : 1990) &&
+          (+el.date <= (filterOptions.dateOfEnd ? +filterOptions.dateOfEnd : el.date))) &&
+        (+el.priceDollar >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart : 0) &&
+          (+el.priceDollar <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd : el.priceDollar))) &&
+        (el.clearance === (filterOptions.clearance ? filterOptions.clearance : el.clearance))
     }))
   }
 
   const filterFunc = (key, value) => {
-    setfilterOptions(filterOptions, filterOptions[key]= value)
+    setfilterOptions(filterOptions, filterOptions[key] = value)
     filtering()
   }
 
@@ -61,24 +101,21 @@ const App = () => {
     filtering()
   }
 
-  const searching = (e) => {
-    e.preventDefault()
-    let arr = cars
-    setFilteredData(
-      arr.filter(el => {
-        return el.mark.toLowerCase().includes(searchValue.toLowerCase()) ||
-        el.model.toLowerCase().includes(searchValue.toLowerCase()) ||
-        el.date.toLowerCase().includes(searchValue.toLowerCase())
-      })
-    );
+  const handleClickSearchItem = (e) => {
+    setSearchKeys(e.target.outerText.split(' '))
   }
 
   return (
     <div className='App'>
-      <Header searchValue={searchValue} setSearchValue={setSearchValue} searching={searching}/>
+      <Header
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        filteredData={filteredData}
+        handleClickSearchItem={handleClickSearchItem}
+      />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData} removeFilterOption={removeFilterOption}/>} />
+          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData} removeFilterOption={removeFilterOption} />} />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />
@@ -86,8 +123,8 @@ const App = () => {
           <Route path='/help' element={<Help />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<DetailsPage />} />
-          <Route path='/cars' element={<CarsPage filteredData={filteredData}/>}/>
-          <Route path='/caritem' element={<CarItem />}/>
+          <Route path='/cars' element={<CarsPage filteredData={filteredData} />} />
+          <Route path='/caritem' element={<CarItem />} />
         </Routes>
       </div>
       <Footer />

@@ -8,7 +8,6 @@ import FilterCity from './FilterCity'
 import Filter from './Filter'
 
 const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
-    const [filteredCars, setFilteredCars] = useState([])
     const [suggestions, setSuggestions] = useState(0)
     const [openfilter, setOpenfilter] = useState(false)
     const [isHideRows, setIsHideRows] = useState(true)
@@ -55,13 +54,11 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
 
     const handleSelectMark = (e) => {
         let arr = cars.filter(el => el[e.target.id] === e.target.outerText)
-        setFilteredCars(arr)
         return new Set(arr.map(el => el.model))
     }
 
     const handleSelectCity = (e) => {
         let arr = cars.filter(el => el[e.target.id] === e.target.outerText)
-        setFilteredCars(arr)
         return new Set(arr.map(el => el.city).filter(el => el != false))
     }
 

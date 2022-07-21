@@ -1,17 +1,22 @@
-.SearchBar{
+.searchBar {
+    width: 50%;
+    position: relative;
+}
+
+.searchBar form {
     display: flex;
     width: 100%;
-    margin: 0 100px;
+    /* margin: 0 100px; */
     align-items: center;
     border: 1px solid #E7E7E7;
     border-radius: 4px;
 }
 
-.SearchBar:hover {
+.searchBar form:hover {
     border: 1px solid #7298b3;
 }
 
-.SearchBar input{    
+.searchBar form input {
     margin: 2px;
     padding: 11px 15px;
     height: auto;
@@ -20,19 +25,37 @@
     font-size: 1rem;
 }
 
-.SearchBar input::placeholder{
+.searchBar form input::placeholder {
     color: #e7eaed;
 }
 
-.SearchBar button{
+.searchBar form button {
     background: #FFF;
 }
 
-.SearchBar i{
+.searchBar form i {
     color: #e7eaed;
 }
 
-.SearchBar i:hover{
+.searchBar form i:hover {
     box-shadow: none;
-    color:#7298b3;
+    color: #7298b3;
+}
+
+.searchBar .dropDown {
+    position: absolute;
+    max-height: 400px;
+    width: 100%;
+    background-color: white;
+}
+
+.searchBar .dropDown .search_item{
+    padding: 11px 15px;
+    font-size: 1rem;
+}
+
+.searchBar .dropDown .search_item:hover{
+    cursor: pointer;
+    background-color: #1172b6;
+    color: white;
 }
