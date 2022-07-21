@@ -22,7 +22,7 @@ const Pagination = ({ filteredData, changePageNumber, currentPage }) => {
                 className={currentPage > 1 ? 'pagespannk btn active' : 'pagespannk btn'}
                 onClick={() => changePageNumber(currentPage - 1)}
             >
-                <i class="fa-solid fa-angle-left"></i>
+                <i className="fa-solid fa-angle-left"></i>
             </span>
             {
                 pageNumbers[0] > 2 && <span className='page-item' >
@@ -53,7 +53,7 @@ const Pagination = ({ filteredData, changePageNumber, currentPage }) => {
                 className={currentPage < Math.ceil(filteredData.length / 10) ? 'pagespannk btn active' : 'pagespannk btn'}
                 onClick={() => changePageNumber(currentPage + 1)}
             >
-                <i class="fa-solid fa-angle-right"></i>
+                <i className="fa-solid fa-angle-right"></i>
             </span>
         </div>
 

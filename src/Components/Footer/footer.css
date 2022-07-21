@@ -1,25 +1,23 @@
-
-
-.footer_menu{
+.footer_menu {
     display: flex;
     justify-content: center;
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto 0;
     background-color: #e5eaef3d;
     padding: 20px 0;
 }
 
-.footer_menu a{
+.footer_menu a {
     text-decoration: none;
     color: #6097bd;
 }
 
-.footer_menu a:hover{
+.footer_menu a:hover {
     color: red;
 }
 
-.footer_logo{
+.footer_logo {
     position: relative;
     top: 30px;
     margin: 0 auto;
@@ -29,23 +27,23 @@
     align-items: center;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo p{
+.logo p {
     color: lightgray;
     position: relative;
     top: 10px;
 }
 
-span{
+span {
     color: lightgray;
 }
 
-span a{
+span a {
     font-size: 17px;
     text-decoration: none;
     color: rgb(216, 16, 16);
