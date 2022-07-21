@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom'
 const NotFoundPage = () => {
   return (
     <div className='NotFoundPage'>
-      <div className='img'>
-      </div>
+      <Link to={'/'}>
+        <div className='img'>
+
+        </div>
+      </Link>
       <div className='content'>
         <h1>
           Ցավոք, նման էջ գոյություն չունի

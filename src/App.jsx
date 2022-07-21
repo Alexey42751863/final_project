@@ -62,6 +62,7 @@ const App = () => {
     setfilterOptions(filterOptions, filterOptions.dateOfEnd = searchKeys[0])
     setfilterOptions(filterOptions, filterOptions.mark = searchKeys[1])
     setfilterOptions(filterOptions, filterOptions.model = searchKeys[2])
+    if (!searchValue) setfilterOptions({})
   }, [searchKeys])
 
 
@@ -105,6 +106,8 @@ const App = () => {
     setSearchKeys(e.target.outerText.split(' '))
   }
 
+  // console.log(filterOptions);
+
   return (
     <div className='App'>
       <Header
@@ -115,7 +118,14 @@ const App = () => {
       />
       <div className='content'>
         <Routes>
-          <Route path='/' element={<Home cars={cars} filterFunc={filterFunc} filteredData={filteredData} removeFilterOption={removeFilterOption} />} />
+          <Route path='/'
+            element={<Home
+              cars={cars}
+              filterFunc={filterFunc}
+              filteredData={filteredData}
+              removeFilterOption={removeFilterOption}
+            />}
+          />
           <Route path='/dealers' element={<Dealers />} />
           <Route path='/be_a_dealer' element={<BeADealer />} />
           <Route path='/advertising' element={<Advertising />} />
@@ -123,7 +133,14 @@ const App = () => {
           <Route path='/help' element={<Help />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<DetailsPage />} />
-          <Route path='/cars' element={<CarsPage filteredData={filteredData} />} />
+          <Route path='/cars'
+            element={<CarsPage
+              filteredData={filteredData}
+              filterOptions={filterOptions}
+              setfilterOptions={setfilterOptions}
+              filtering = {filtering}
+            />}
+          />
           <Route path='/not' element={<NotFoundPage />} />
         </Routes>
       </div>

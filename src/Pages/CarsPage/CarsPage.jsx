@@ -3,10 +3,10 @@ import CarsPageHeader from './CarsPageHeader';
 import CarsNavbar from './CarsNavbar';
 import CarsList from './CarsList';
 
-const CarsPage = ({filteredData}) => {
+const CarsPage = ({filteredData, filterOptions, setfilterOptions, filtering}) => {
     return (
         <div className='CarsPage'>
-            <CarsNavbar />
+            <CarsNavbar filterOptions={filterOptions} setfilterOptions={setfilterOptions} filtering={filtering}/>
             <div className="carsHeaderContainer">
                 <CarsPageHeader />
                 <CarsList filteredData={filteredData}/>
