@@ -1,1 +1,63 @@
+.NotFoundPage{
+    margin-top: 0;
+    background-color: #f6f6f6;
+}
 
+.NotFoundPage .img{
+    background: url(https://auto.am/assets/img/404/car.jpg) center no-repeat;
+    max-width: 100%;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+    top: -120px;
+}
+
+.NotFoundPage .content {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0 5%;
+    position: relative;
+    top: -180px
+}
+
+.NotFoundPage .content h1 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    text-transform: none;
+}
+
+
+
+.NotFoundPage .content .descr h3 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+    text-transform: none;
+}
+
+.NotFoundPage .content .descr p {
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: none;
+}
+
+.NotFoundPage .content .descr ul {
+    padding-left: 40px;
+    line-height: 1.62em;
+    margin: 1rem 0;
+}
+
+.NotFoundPage .content .descr li {
+    text-transform: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.NotFoundPage .content .descr a {
+    color: #ff5252;
+    text-transform: none;
+    text-decoration: underline;
+    margin: 0 2px;
+}
