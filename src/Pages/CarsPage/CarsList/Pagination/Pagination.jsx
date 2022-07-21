@@ -33,7 +33,7 @@ const Pagination = ({ filteredData, changePageNumber, currentPage }) => {
                 </span>
             }
             {
-                pageNumbers.map((item,num) => {
+                pageNumbers.map(num => {
                     return <span className='page-item' key={num}>
                         <a href="#" className = {currentPage ===num? 'pagespannk active': 'pagespannk'}  onClick={() => changePageNumber(num)}>
                             {num}
