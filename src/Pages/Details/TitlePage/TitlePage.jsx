@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const TitlePage = ({ car }) => {
     const price=document.querySelector('.pricelist')
     const mouseOverPrice=()=>{
-        price.classList.add('hidden');
+      if(car.priceDollar) price.classList.add('hidden');
     }
     const mouseLeaveFromPrice=()=>{
         price.classList.remove('hidden')
@@ -34,10 +34,10 @@ const TitlePage = ({ car }) => {
                     <div className="customs">
                        {car.clearance? 'Մաքսազերծված է':'Մաքսազերծված չէ'}
                     </div>
-                </div>
+                </div> 
             </div>
-            <div className="price"onMouseOver={mouseOverPrice} onMouseLeave={mouseLeaveFromPrice}>
-                {car.priceDolor} $
+            <div className="price" onMouseOver={mouseOverPrice} onMouseLeave={mouseLeaveFromPrice}>
+              {car.priceDollar?  car.priceDollar+ ' $':car.priceDram}
                 <div className="pricelist" >
                     <div className="prices dol">{car.priceDolor} $</div>
                     <div className="prices">{car.priceDram} ֏</div>
