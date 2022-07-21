@@ -14,6 +14,7 @@ import Footer from './Components/Footer'
 import DetailsPage from './Pages/Details'
 import CarsPage from './Pages/CarsPage'
 import CarItem from './Components/Slider/CarItem'
+import SellCar from './Components/SellCar'
 
 const App = () => {
   const [cars, setCars] = useState([])
@@ -127,6 +128,7 @@ const App = () => {
           <Route path='/caritem' element={<CarItem />} />
         </Routes>
       </div>
+      {/* <SellCar /> */}
       <Footer />
     </div>
   )
