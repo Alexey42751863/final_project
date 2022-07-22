@@ -29,7 +29,7 @@ const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchIt
 
   return (
     <div className='header'>
-       <SellCar openLogin={openLogin} setOpenLogin={setOpenLogin}/>
+      <SellCar openLogin={openLogin} setOpenLogin={setOpenLogin} />
       <div className='logoContainter'>
         <Navbar showSideBarM={showSideBarM} />
         <Link className='logo' to={'/'}></Link>
@@ -41,7 +41,9 @@ const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchIt
         handleClickSearchItem={handleClickSearchItem}
       />
       <div className='diler'>
-        <i className="fa-solid fa-car"></i>
+        <Link to={'/dealers'}>
+          <i className="fa-solid fa-car"></i>
+        </Link>
         <i className="fa-solid fa-message" onClick={showSideBarM}></i>
         <button className="btn" onClick={openloginModalfunc}>Վաճառել</button>
       </div>
