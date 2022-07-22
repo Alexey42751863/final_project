@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
-const LeftBarInputs = ({ title, id, min, max, step, filterOptions, setfilterOptions, filtering }) => {
+const LeftBarInputs = ({ title, id, min, max, step, filterOptions, setFilterOptions, filtering }) => {
     const [dateOfStartValue, setDateOfStartValue] = useState('')
     const [dateOfEndValue, setDateOfEndValue] = useState('')
     const [priceOfStartValue, setPriceOfStartValue] = useState('')
@@ -33,10 +33,10 @@ const LeftBarInputs = ({ title, id, min, max, step, filterOptions, setfilterOpti
 
     const handleChange = (value, key) => {
         if (key === 'clearance' || key === 'contractual') {
-            setfilterOptions(filterOptions, filterOptions[key] = (filterOptions[key] ? '' : 'true'))
+            setFilterOptions(filterOptions, filterOptions[key] = (filterOptions[key] ? '' : 'true'))
         } else if (filterOptions[key] === value) {
-            setfilterOptions(filterOptions, filterOptions[key] = '')
-        } else setfilterOptions(filterOptions, filterOptions[key] = value)
+            setFilterOptions(filterOptions, filterOptions[key] = '')
+        } else setFilterOptions(filterOptions, filterOptions[key] = value)
 
         setDateOfStartValue(filterOptions.dateOfStart)
         setDateOfEndValue(filterOptions.dateOfEnd)
