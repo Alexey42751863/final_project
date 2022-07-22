@@ -72,9 +72,7 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
     }
 
     const handleChange = (e) => {
-        console.log(e.target.id);
-        e.target.id === 'clearance' && e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
-        e.target.id === 'contractual' && e.target.checked ? filterFunc('contractual', String(e.target.checked)) : filterFunc('contractual', '')
+        e.target.checked ? filterFunc(e.target.id, 'true') : filterFunc(e.target.id, '')
     }
 
     return (
