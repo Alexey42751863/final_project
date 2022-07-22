@@ -88,7 +88,8 @@ const App = () => {
           (+el.date <= (filterOptions.dateOfEnd ? +filterOptions.dateOfEnd : el.date))) &&
         (+el.priceDollar >= (filterOptions.priceOfStart ? +filterOptions.priceOfStart : 0) &&
           (+el.priceDollar <= (filterOptions.priceOfEnd ? +filterOptions.priceOfEnd : el.priceDollar))) &&
-        (el.clearance === (filterOptions.clearance ? filterOptions.clearance : el.clearance))
+        (el.clearance === (filterOptions.clearance ? filterOptions.clearance : el.clearance)) &&
+        (el.priceDram === (filterOptions.contractual ? 'Պայմ.' : el.priceDram))
     }))
   }
 
@@ -139,7 +140,7 @@ const App = () => {
               filteredData={filteredData}
               filterOptions={filterOptions}
               setfilterOptions={setfilterOptions}
-              filtering = {filtering}
+              filtering={filtering}
               setSearchValue={setSearchValue}
             />}
           />

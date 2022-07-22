@@ -71,8 +71,10 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
         title === 'priceOfStart' || title === 'priceOfEnd' ? filterFunc(title, e.target.outerText.slice(1)) : filterFunc(title, e.target.outerText)
     }
 
-    const handleClearance = (e) => {
-        e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
+    const handleChange = (e) => {
+        console.log(e.target.id);
+        e.target.id === 'clearance' && e.target.checked ? filterFunc('clearance', String(e.target.checked)) : filterFunc('clearance', '')
+        e.target.id === 'contractual' && e.target.checked ? filterFunc('contractual', String(e.target.checked)) : filterFunc('contractual', '')
     }
 
     return (
@@ -204,8 +206,10 @@ const FilterBar = ({ cars, filterFunc, filteredData, removeFilterOption }) => {
             </div>
             <div className='row last'>
                 <div className='checkbox'>
-                    <input type="checkbox" id='clearance' onClick={handleClearance} />
+                    <input type="checkbox" id='clearance' onClick={handleChange} />
                     <label htmlFor="clearance"> Մաքսազերծված </label>
+                    <input type="checkbox" id='contractual' onClick={handleChange} />
+                    <label htmlFor="contractual"> պայմանագրային </label>
                 </div>
                 <div className='filterButton' onClick={openfilterfunc}>
                     {!isHideRows ? 'հասարակ որոնում' : 'ընդլայնված որոնում'}

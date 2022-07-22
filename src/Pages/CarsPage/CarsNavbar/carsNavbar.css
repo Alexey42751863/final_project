@@ -13,10 +13,16 @@
     height: 22px;
 }
 .carsNavbar .filterParams.datePrice{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+.carsNavbar .filterParams.datePrice.show{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .carsNavbar .filterParams .place{
     display: flex;
@@ -30,6 +36,27 @@
     padding: 5px;
     width: 48%;
     border-radius: 4px;
+    margin: 2px;
+}
+.carsNavbar .filterParams.datePrice .inputs{
+    width: 100%;
+}
+.carsNavbar .filterParams.datePrice .check input{
+    max-width: 27px;
+}
+.carsNavbar .filterParams.datePrice .check{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.carsNavbar .filterParams.datePrice .check p{
+    width: 100%;
+    /* align-items: center; */
+    /* width: 100%; */
+}
+.carsNavbar .filterParams.datePrice .check p label{
+    width: 100%;
 }
 .carsNavbar .params{
     display: flex;
