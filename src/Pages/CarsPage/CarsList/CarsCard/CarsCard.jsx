@@ -1,5 +1,6 @@
 import React from 'react'
 import './carsCard.css'
+import { NavLink as Link } from 'react-router-dom'
 
 const CarsCard = ({ car }) => {
   const getDateNow = () => {
@@ -12,10 +13,20 @@ const CarsCard = ({ car }) => {
     return (day + '.' + month + '.' + year)
   }
 
+  const onMouseOver=(e)=>{
+    e.target.src=car.imgUrls[1]
+  }
+  const onMouseLeave=(e)=>{
+    e.target.src=car.imgUrls[0]
+  }
   return (
     <div className='carsCard'>
       <div className='img'>
-        <img src={car.imgUrls[0]} alt='car_image' />
+        <Link to={'/detail/'+car.id}>
+          <img onMouseOver={onMouseOver} 
+            onMouseLeave={onMouseLeave}
+            src={car.imgUrls[0]} alt='car_image' />
+        </Link>
       </div>
       <div className="obshi_item">
         <div className="info">

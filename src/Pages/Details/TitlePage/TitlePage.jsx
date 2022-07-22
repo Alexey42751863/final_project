@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TitlePage = ({ car }) => {
-    const price = document.querySelector('.pricelist')
-    const mouseOverPrice = () => {
-        price.classList.add('hidden');
+    const price=document.querySelector('.pricelist')
+    const mouseOverPrice=()=>{
+      if(car.priceDollar) price.classList.add('hidden');
     }
     const mouseLeaveFromPrice = () => {
         price.classList.remove('hidden')
@@ -45,10 +45,10 @@ const TitlePage = ({ car }) => {
                     <div className="customs">
                         {car.clearance ? 'Մաքսազերծված է' : 'Մաքսազերծված չէ'}
                     </div>
-                </div>
+                </div> 
             </div>
             <div className="price" onMouseOver={mouseOverPrice} onMouseLeave={mouseLeaveFromPrice}>
-                {car.priceDollar} $
+              {car.priceDollar?  car.priceDollar+ ' $':car.priceDram}
                 <div className="pricelist" >
                     <div className="prices dol">{car.priceDollar} $</div>
                     <div className="prices">{car.priceDram} ֏</div>

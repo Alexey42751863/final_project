@@ -4053,35 +4053,6 @@
       "priceEuro": "8 037"
     },
     {
-      "id": "2789856",
-      "mark": "Hyundai",
-      "model": "Elantra",
-      "date": "2017",
-      "country": "Հայաստան",
-      "city": "Երևան",
-      "clearance": "true",
-      "mileage": "84000",
-      "carBody": "Սեդան",
-      "gearbox": "Ավտոմատ",
-      "steeringWheel": "Ձախ",
-      "mator": " ",
-      "color": "Կապույտ",
-      "matorValue": "2․0",
-      "tug": " ",
-      "options": "ABS, TRC ",
-      "additional": "MEQENAN GTNVUM E SHAT LAV VICHAKUM",
-      "imgUrls": [
-        "https://auto.am/static/offers/2789856/m-330e8572494c710c9875874b8294d67c.jpg",
-        "https://auto.am/static/offers/2789856/s-f9ffe927043072af5b65a70f26129ca2.jpg",
-        "https://auto.am/static/offers/2789856/s-fce4a43be4fb90a55e8cb3637a63fe84.jpg",
-        "https://auto.am/static/offers/2789856/s-1594a946e21667b15bc23805c9490ea4.jpg"
-      ],
-      "priceDram": "5 221 760",
-      "priceRubli": "699 967",
-      "priceDollar": "12800",
-      "priceEuro": "12 247"
-    },
-    {
       "id": "2737101",
       "mark": "Hyundai",
       "model": "Elantra",
@@ -4584,37 +4555,6 @@
       "priceRubli": "730 124",
       "priceDollar": "10000",
       "priceEuro": "9 246"
-    },
-    {
-      "id": "2789701",
-      "mark": "Hyundai",
-      "model": "Kona",
-      "date": "2018",
-      "country": "Հայաստան",
-      "city": "Երևան",
-      "clearance": "true",
-      "mileage": "32000",
-      "carBody": "Սեդան",
-      "gearbox": "Ավտոմատ",
-      "steeringWheel": "Ձախ",
-      "modification": "Fullll",
-      "mator": "Բենզին",
-      "color": "Կապույտ",
-      "matorValue": " ",
-      "tug": " ",
-      "options": "KM8K12AA9KU266522",
-      "additional": "shtap idelakann",
-      "imgUrls": [
-        "https://auto.am/static/offers/2789701/77b3392f914166b6527c18a2d4c28468.jpg",
-        "https://auto.am/static/offers/2789701/3b3f0164361c117a3b4f1e2b3f618341.jpg",
-        "https://auto.am/static/offers/2789701/c211e6534c85577f338305fa75442e49.jpg",
-        "https://auto.am/static/offers/2789701/ee0813cd41436fd7de6f6ca5669c3853.jpg",
-        "https://auto.am/static/offers/2789701/d5e340a1ea2490eb801e40543788ef31.jpg"
-      ],
-      "priceDram": "7 207 617",
-      "priceRubli": "930 015",
-      "priceDollar": "17700",
-      "priceEuro": "17 017"
     },
     {
       "id": "2787289",
