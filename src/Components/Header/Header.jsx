@@ -5,10 +5,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
+import SellCar from '../SellCar';
 const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchItem }) => {
 
   const [openM, setOpenM] = useState(false)
   const showSideBarM = () => setOpenM(true)
+  const [openLogin, setOpenLogin] = useState(false)
 
   useEffect(() => {
     let handlerM = (event) => {
@@ -22,8 +24,12 @@ const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchIt
     }
   })
 
+  const openloginModalfunc = () => setOpenLogin(true)
+
+
   return (
     <div className='header'>
+       <SellCar openLogin={openLogin} setOpenLogin={setOpenLogin}/>
       <div className='logoContainter'>
         <Navbar showSideBarM={showSideBarM} />
         <Link className='logo' to={'/'}></Link>
@@ -37,7 +43,7 @@ const Header = ({ searchValue, setSearchValue, filteredData, handleClickSearchIt
       <div className='diler'>
         <i className="fa-solid fa-car"></i>
         <i className="fa-solid fa-message" onClick={showSideBarM}></i>
-        <button className="btn">Վաճառել</button>
+        <button className="btn" onClick={openloginModalfunc}>Վաճառել</button>
       </div>
       <div className={openM ? "massageBar open" : "massageBar"}>
         <div className="massageContent">

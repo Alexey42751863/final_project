@@ -167,6 +167,7 @@ const App = () => {
           <Route path='/not' element={<NotFoundPage />} />
         </Routes>
       </div>
+      
       <Footer />
     </div>
   )
