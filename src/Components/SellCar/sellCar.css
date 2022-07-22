@@ -35,6 +35,19 @@
     background-color: rgb(246, 245, 250);
     width: 27%;
   }
+  .modal .modal-content .head .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal .modal-content .head .close:hover,
+  .modal .modal-content .head .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .modal .modal-content span p{
     font-size: 1rem;
     display: flex;
@@ -45,7 +58,7 @@
     padding: 0px 20px;
 }
   
-.modal.open .modal-content .enter{
+.modal.open .modal-content .head .enter{
     font-size: 20px;
     padding-bottom: 18px;
 }
@@ -85,7 +98,7 @@
     margin: 8px 0;
     box-sizing: border-box;
   }
-  .modal .modal-content .checkmark{
+  .modal .modal-content .user .checkmark{
     margin-left: 6px;
     margin-top: 10px;
     width: 22px;
@@ -93,12 +106,12 @@
     background: white;
     border: 1px solid #dedede;
   }
-  .modal .modal-content .forgot{
+  .modal .modal-content .user .forgot{
     font-size: .8rem;
     color: rgb(212, 31, 31);
     margin-left: 2rem;
   }
-  .modal .modal-content .remember{
+  .modal .modal-content .user .remember{
     margin-left: .5rem;
     color: rgb(95, 94, 94);
   }
