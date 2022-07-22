@@ -3,41 +3,52 @@ import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { FiMenu } from 'react-icons/fi'
 import { CgMenuGridR, CgMenuRightAlt } from 'react-icons/cg'
 
-const CarsPageHeader = () => {
+const CarsPageHeader = ({ sorting }) => {
     const [hover, setHover] = useState(false);
+    const [selectedValue, setSelectedValue] = useState('Գին՝  էժանից - թանկ')
     const select = document.querySelector('.select');
 
-    const onClick = () => {
+    const handleClick = () => {
         select.classList.toggle('show')
     }
+
     const onMouseOver = () => {
         hover ? setHover(false) : setHover(true);
     }
+
     const onMouseLeave = () => {
         setHover(false)
     }
-    
+
+    const handleSelectOption = (e) => {
+        setSelectedValue(e.target.innerText)
+        handleClick()
+        sorting(e.target.id)
+    }
+
     return (
         <header className='carsHeader'>
-            <div className={hover ? 'filterByType border' : 'filterByType'} onMouseEnter={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
-                <p>Գին՝  էժանից - թանկ</p> <AiOutlineDown className={hover ? 'hide' : 'downIcon'} /><AiOutlineUp className={hover ? 'show' : 'upIcon'} />
+            <div className={hover ? 'filterByType border' : 'filterByType'}
+                onMouseEnter={onMouseOver}
+                onMouseLeave={onMouseLeave}
+                onClick={handleClick}
+            >
+                <p>{selectedValue}</p>
+                <AiOutlineDown className={hover ? 'hide' : 'downIcon'} />
+                <AiOutlineUp className={hover ? 'show' : 'upIcon'} />
             </div>
-            <div className="select">
-                <div className='option'>
-                    <p>Գին՝  էժանից - </p>
-                    <p> թանկ</p>
+            <div className="select" onClick={(e) => handleSelectOption(e)}>
+                <div className='option' id='1'>
+                    Գին՝  էժանից - թանկ
                 </div>
-                <div className='option'>
-                    <p>Գին՝  թանկից -</p>
-                    <p> էժան</p>
+                <div className='option' id='2'>
+                    Գին՝  թանկից - էժան
                 </div>
-                <div className='option'>
-                    <p>Տարեթիվ՝</p>
-                    <p> ամենահները</p>
+                <div className='option' id='3'>
+                    Տարեթիվ՝ ամենահները
                 </div>
-                <div className='option'>
-                    <p>Տարեթիվ՝</p>
-                    <p> ամենանորերը</p>
+                <div className='option' id='4'>
+                    Տարեթիվ՝ ամենանորերը
                 </div>
             </div>
             <div className='buyers'>

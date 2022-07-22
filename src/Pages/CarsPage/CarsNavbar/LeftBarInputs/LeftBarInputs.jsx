@@ -18,19 +18,25 @@ const LeftBarInputs = ({ title, id, min, max, step, filterOptions, setfilterOpti
         filterOptions.priceOfEnd && setPriceOfEndValue(filterOptions.priceOfEnd)
         filterOptions.clearance && setClearanceCheck(filterOptions.clearance)
         filterOptions.contractual && setContractualCheck(filterOptions.contractual)
-    }, [filterOptions])
+    }, [
+        filterOptions.dateOfStart,
+        filterOptions.dateOfEnd,
+        filterOptions.priceOfStart,
+        filterOptions.priceOfEnd,
+        filterOptions.clearance,
+        filterOptions.contractual
+    ])
 
     const onClickFunc = () => {
         !open ? setOpen(true) : setOpen(false);
     }
 
-    const handleChange = (e, key) => {
-        console.log(e, key);
+    const handleChange = (value, key) => {
         if (key === 'clearance' || key === 'contractual') {
             setfilterOptions(filterOptions, filterOptions[key] = (filterOptions[key] ? '' : 'true'))
-        } else if (filterOptions[key] === e) {
+        } else if (filterOptions[key] === value) {
             setfilterOptions(filterOptions, filterOptions[key] = '')
-        } else setfilterOptions(filterOptions, filterOptions[key] = e)
+        } else setfilterOptions(filterOptions, filterOptions[key] = value)
 
         setDateOfStartValue(filterOptions.dateOfStart)
         setDateOfEndValue(filterOptions.dateOfEnd)
@@ -39,7 +45,6 @@ const LeftBarInputs = ({ title, id, min, max, step, filterOptions, setfilterOpti
         setClearanceCheck(filterOptions.clearance)
         setContractualCheck(filterOptions.contractual)
         filtering()
-        console.log(filterOptions)
     }
 
     return (

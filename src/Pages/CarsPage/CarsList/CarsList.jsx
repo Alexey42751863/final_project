@@ -3,15 +3,17 @@ import { useState } from 'react';
 import CarsCard from './CarsCard/CarsCard';
 import Pagination from './Pagination'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const CarsList = ({ filteredData }) => {
 
     const [currentPage, setCurrentPage] = useState(1)
+    const [currentCar, setCurrentCar] = useState([])
+
+    useEffect(() => setCurrentCar(filteredData.slice(firstIndex + 1, lastIndex - 1)), [filteredData])
 
     const lastIndex = currentPage * 10;
     const firstIndex = lastIndex - 1 - 10;
-
-    const currentCar = filteredData.slice(firstIndex + 1, lastIndex - 1)
 
     const changePageNumber = num => setCurrentPage(num)
 

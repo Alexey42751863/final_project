@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import LeftBarInputs from './LeftBarInputs'
 
-const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue }) => {
+const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchValue, setSearchValue }) => {
 
     const [markCheck, setMarkCheck] = useState('')
     const [modelCheck, setModelCheck] = useState('')
@@ -18,21 +18,34 @@ const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue
     const [countryCheck, setCountryCheck] = useState('')
     const [cityCheck, setCityCheck] = useState('')
 
-    const mark = ['Mercedes', 'Toyota', 'Nissan', 'BMW', 'Hyundai'];
-    const model = [];
-    const carBody = ['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք'];
-    const mator = ['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել'];
-    const gearbox = ['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական'];
-    const tug = ['Առջևի', 'Ետևի', 'Լիաքարշակ'];
-    const steeringWheel = ['Ձախ', 'Աջ'];
-    const country = ['Հայաստան', 'ԱՄՆ'];
-    const city = [];
+    const [mark] = useState(['Mercedes', 'Toyota', 'Nissan', 'BMW', 'Hyundai']);
+    const [model, setModel] = useState([]);
+    const [carBody] = useState(['Սեդան', 'Ամենագնաց', 'Ունիվերսալ', 'Կուպե', 'Կաբրիոլետ / Ռոդսթեր', 'Հետչբեք']);
+    const [mator] = useState(['Հիբրիդ', 'Գազ', 'Բենզին', 'Դիզել']);
+    const [gearbox] = useState(['Ավտոմատ', 'Կիսաավտոմատ', 'Մեխանիկական']);
+    const [tug] = useState(['Առջևի', 'Ետևի', 'Լիաքարշակ']);
+    const [steeringWheel] = useState(['Ձախ', 'Աջ']);
+    const [country] = useState(['Հայաստան', 'ԱՄՆ']);
+    const [city, setCity] = useState([]);
 
     // useEffect(() => {
-    //     setSearchValue('')
-    // }, [])
+    //     setMarkCheck('')
+    //     setModelCheck('')
+    //     setCarBodyCheck('')
+    //     setMatorCheck('')
+    //     setGearboxCheck('')
+    //     setTugCheck('')
+    //     setSteeringWheelCheck('')
+    //     setCountryCheck('')
+    //     setCityCheck('')
+    // }, [searchValue])
 
     useEffect(() => {
+        markCheck ? setModel([...handleSelectMark('mark', markCheck)]) : setModel([])
+        countryCheck ? setCity([...handleSelectCountry('country', countryCheck)]) : setCity([])
+    }, [markCheck, countryCheck])
+
+    useEffect(() => {        
         filterOptions.mark && setMarkCheck(filterOptions.mark)
         filterOptions.model && setModelCheck(filterOptions.model)
         filterOptions.carBody && setCarBodyCheck(filterOptions.carBody)
@@ -42,14 +55,37 @@ const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue
         filterOptions.steeringWheel && setSteeringWheelCheck(filterOptions.steeringWheel)
         filterOptions.country && setCountryCheck(filterOptions.country)
         filterOptions.city && setCityCheck(filterOptions.city)
-    }, [filterOptions])
+    }, [
+        filterOptions.mark, 
+        filterOptions.model, 
+        filterOptions.carBody, 
+        filterOptions.mator, 
+        filterOptions.gearbox, 
+        filterOptions.tug, 
+        filterOptions.steeringWheel, 
+        filterOptions.country,
+        filterOptions.city,
+        searchValue
+    ])
 
+    const handleSelectMark = (key, value) => {
+        let arr = cars.filter(el => el[key] === value)
+        return new Set(arr.map(el => el.model))
+    }
 
+    const handleSelectCountry = (key, value) => {
+        let arr = cars.filter(el => el[key] === value)
+        return new Set(arr.map(el => el.city).filter(el => el))
+    }
 
-    const handleCheckBox = (e, key) => {
-        if (filterOptions[key] === e) {
-            setfilterOptions(filterOptions, filterOptions[key] = '')
-        } else setfilterOptions(filterOptions, filterOptions[key] = e)
+    const handleChange = (value, key) => {
+        setSearchValue('')
+
+        if (filterOptions[key] === value) {
+            setFilterOptions(filterOptions, filterOptions[key] = '')
+            if (key === "mark") setFilterOptions(filterOptions, filterOptions.model = '')
+            if (key === "country") setFilterOptions(filterOptions, filterOptions.city = '')
+        } else setFilterOptions(filterOptions, filterOptions[key] = value)
 
         setMarkCheck(filterOptions.mark)
         setModelCheck(filterOptions.model)
@@ -65,16 +101,22 @@ const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue
 
     return (
         <nav className='carsNavbar'>
-            <LeftBar title={'Մակնիշը'} id={'mark'} list={mark} filterOption={markCheck} handleCheckBox={handleCheckBox} />
+            <LeftBar title={'Մակնիշը'} id={'mark'} list={mark} filterOption={markCheck} handleChange={handleChange} />
+            {model.length !== 0 && <LeftBar
+                title={markCheck}
+                id={'model'}
+                list={model}
+                filterOption={modelCheck}
+                handleChange={handleChange}
+            />}
             <LeftBarInputs
                 title={'Տարեթիվը'}
                 id={'date'}
                 min={1990}
                 max={2022}
                 step={1}
-                handleCheckBox={handleCheckBox}
                 filterOptions={filterOptions}
-                setfilterOptions={setfilterOptions}
+                setFilterOptions={setFilterOptions}
                 filtering={filtering}
             />
             <LeftBarInputs
@@ -83,17 +125,23 @@ const CarsNavbar = ({ filterOptions, setfilterOptions, filtering, setSearchValue
                 min={1000}
                 max={10000000}
                 step={1000}
-                handleCheckBox={handleCheckBox}
                 filterOptions={filterOptions}
-                setfilterOptions={setfilterOptions}
+                setFilterOptions={setFilterOptions}
                 filtering={filtering}
             />
-            <LeftBar title={'Թափքը'} id={'carBody'} list={carBody} filterOption={carBodyCheck} handleCheckBox={handleCheckBox} />
-            <LeftBar title={'Շարժիչը'} id={'mator'} list={mator} filterOption={matorCheck} handleCheckBox={handleCheckBox} />
-            <LeftBar title={'Փոխանցման տուփը'} id={'gearbox'} list={gearbox} filterOption={gearboxCheck} handleCheckBox={handleCheckBox} />
-            <LeftBar title={'Քարշակը'} id={'tug'} list={tug} filterOption={tugCheck} handleCheckBox={handleCheckBox} />
-            <LeftBar title={'Ղեկը'} id={'steeringWheel'} list={steeringWheel} filterOption={steeringWheelCheck} handleCheckBox={handleCheckBox} />
-            <LeftBar title={'Գտնվելու վայրը'} id={'country'} list={country} filterOption={countryCheck} handleCheckBox={handleCheckBox} />
+            <LeftBar title={'Թափքը'} id={'carBody'} list={carBody} filterOption={carBodyCheck} handleChange={handleChange} />
+            <LeftBar title={'Շարժիչը'} id={'mator'} list={mator} filterOption={matorCheck} handleChange={handleChange} />
+            <LeftBar title={'Փոխանցման տուփը'} id={'gearbox'} list={gearbox} filterOption={gearboxCheck} handleChange={handleChange} />
+            <LeftBar title={'Քարշակը'} id={'tug'} list={tug} filterOption={tugCheck} handleChange={handleChange} />
+            <LeftBar title={'Ղեկը'} id={'steeringWheel'} list={steeringWheel} filterOption={steeringWheelCheck} handleChange={handleChange} />
+            <LeftBar title={'Գտնվելու վայրը'} id={'country'} list={country} filterOption={countryCheck} handleChange={handleChange} />
+            {city.length !== 0 && <LeftBar
+                title={countryCheck}
+                id={'city'}
+                list={city}
+                filterOption={cityCheck}
+                handleChange={handleChange}
+            />}
             <div className='findClose'>
                 <span className='findSpan'> <BsSearch /> loop</span> <span className='closeSpan'><FaRegTimesCircle /></span>
             </div>

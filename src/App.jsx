@@ -18,7 +18,7 @@ import NotFoundPage from './Pages/NotFoundPage'
 const App = () => {
   const [cars, setCars] = useState([])
   const [filteredData, setFilteredData] = useState([])
-  const [filterOptions, setfilterOptions] = useState({})
+  const [filterOptions, setFilterOptions] = useState({})
   const [searchValue, setSearchValue] = useState('')
   const [searchKeys, setSearchKeys] = useState([])
 
@@ -58,11 +58,11 @@ const App = () => {
   }, [searchValue])
 
   useEffect(() => {
-    setfilterOptions(filterOptions, filterOptions.dateOfStart = searchKeys[0])
-    setfilterOptions(filterOptions, filterOptions.dateOfEnd = searchKeys[0])
-    setfilterOptions(filterOptions, filterOptions.mark = searchKeys[1])
-    setfilterOptions(filterOptions, filterOptions.model = searchKeys[2])
-    if (!searchValue) setfilterOptions({})
+    setFilterOptions(filterOptions, filterOptions.dateOfStart = searchKeys[0])
+    setFilterOptions(filterOptions, filterOptions.dateOfEnd = searchKeys[0])
+    setFilterOptions(filterOptions, filterOptions.mark = searchKeys[1])
+    setFilterOptions(filterOptions, filterOptions.model = searchKeys[2])
+    if (!searchValue) setFilterOptions({})
   }, [searchKeys])
 
 
@@ -70,6 +70,16 @@ const App = () => {
     const result = await axios.get('http://localhost:3000/cars')
     setCars(result.data);
     setFilteredData(result.data)
+  }
+
+  const filterFunc = (key, value) => {
+    setFilterOptions(filterOptions, filterOptions[key] = value)
+    filtering()
+  }
+
+  const removeFilterOption = (key) => {
+    setFilterOptions(filterOptions, filterOptions[key] = '')
+    filtering()
   }
 
   const filtering = () => {
@@ -93,21 +103,28 @@ const App = () => {
     }))
   }
 
-  const filterFunc = (key, value) => {
-    setfilterOptions(filterOptions, filterOptions[key] = value)
-    filtering()
-  }
-
-  const removeFilterOption = (key) => {
-    setfilterOptions(filterOptions, filterOptions[key] = '')
-    filtering()
-  }
-
   const handleClickSearchItem = (e) => {
     setSearchKeys(e.target.outerText.split(' '))
   }
 
-  // console.log(searchValue);
+  const sorting = (sortOption) => {
+    let data = filteredData
+    switch (sortOption) {
+      case ('1'):
+        setFilteredData([...data.sort((a, b) => Number(a.priceDollar) - Number(b.priceDollar))])
+        break
+      case ('2'):
+        setFilteredData([...data.sort((a, b) => Number(b.priceDollar) - Number(a.priceDollar))])
+        break
+      case ('3'):
+        setFilteredData([...data.sort((a, b) => Number(a.date) - Number(b.date))])
+        break
+      case ('4'):
+        setFilteredData([...data.sort((a, b) => Number(b.date) - Number(a.date))])
+        break
+      default: setFilteredData(data)
+    }
+  }
 
   return (
     <div className='App'>
@@ -137,11 +154,14 @@ const App = () => {
           <Route path='/detail/:id' element={<DetailsPage />} />
           <Route path='/cars'
             element={<CarsPage
+              cars={cars}
               filteredData={filteredData}
+              setFilterOptions={setFilterOptions}
               filterOptions={filterOptions}
-              setfilterOptions={setfilterOptions}
               filtering={filtering}
+              searchValue={searchValue}
               setSearchValue={setSearchValue}
+              sorting={sorting}
             />}
           />
           <Route path='/not' element={<NotFoundPage />} />
