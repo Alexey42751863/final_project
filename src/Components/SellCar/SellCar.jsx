@@ -20,7 +20,7 @@ const SellCar = ({ openLogin, setOpenLogin }) => {
       <div id="myModal" className={openLogin ? "modal open" : "modal"}>
         <div className="modal-content">
           <div className='head'>
-            <span class="close" onClick={() => setOpenLogin(false)}>&times;</span>
+            <span className="close" onClick={() => setOpenLogin(false)}>&times;</span>
             <h2 className='enter'>Մուտք</h2>
           </div>
           <span className='about'> <p>Սոց. հաշիվներով </p> </span>

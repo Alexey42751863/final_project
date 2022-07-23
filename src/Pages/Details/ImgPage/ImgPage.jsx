@@ -12,7 +12,6 @@ const ImgPage = ({ car }) => {
     const fullScreenBtn = document.querySelector('.Fullscreen');
     const fullScreen = () => {
         fullScreenBtn.classList.add('active');
-        console.log(fullScreenBtn.classList);
     }
     const closeFullscreen=()=>{
         fullScreenBtn.classList.remove('active')
@@ -34,7 +33,7 @@ const ImgPage = ({ car }) => {
             if (e.target.src === urls[i]) {
                 setCount(i + 1);
             }
-        }
+        } 
     }
     const toRight = () => {
         let lastIndex = 0
@@ -66,11 +65,12 @@ const ImgPage = ({ car }) => {
             }
             <Fullscreen car={car} closeFullscreen={closeFullscreen}/>
             {
-                urls ? <div className="thumbs"> {urls.map(img => (
+                urls ? <div className="thumbs"> {urls.map((img,index) => (
                     <img src={img} alt=''
                         onMouseOver={mouseOver}
                         onMouseLeave={mouseLeave}
                         onClick={selectedImg}
+                        key={index}
                     />
                 ))}</div> : <img src='' alt='no photo' />
             }
