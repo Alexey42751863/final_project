@@ -28,11 +28,11 @@ const Fullscreen = ({car,closeFullscreen}) => {
                             <span className='placeInfo'>
                                 {car.country?car.country:''},{car.city?car.city:''}
                             </span>
-                        </div>
+                        </div> 
                     </div>
                     <div className="wrapperContent">
-                        {urls && urls.map(url => (
-                            <div className="wrapperImg">
+                        {urls && urls.map((url,index) => (
+                            <div className="wrapperImg" key={index}>
                                 {<img src={url}></img>}
                             </div>
                         ))}

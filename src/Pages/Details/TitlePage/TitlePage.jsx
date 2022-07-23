@@ -11,7 +11,7 @@ const TitlePage = ({ car }) => {
     }
 
     const navigate = useNavigate();
-
+ 
     const getDateNow = () => {
         let date = new Date()
         let day = date.getDate()
