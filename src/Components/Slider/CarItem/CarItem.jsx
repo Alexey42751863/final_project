@@ -23,7 +23,7 @@ const CarItem = ({ car }) => {
           </div>
           <div className=' Ekrordtox'>
             <p>{car.date}</p>
-            <p>{car.priceDollar}</p>
+            <p>{car.priceDollar ? '$ ' + car.priceDollar : car.priceDram}</p>
           </div>
         </div>
       </div>
