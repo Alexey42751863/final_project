@@ -27,34 +27,36 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    let arr = cars
-    let searchArr = []
-    let searchValues = searchValue.trim().split(' ')
+    if (searchValue) {
+      let arr = cars
+      let searchArr = []
+      let searchValues = searchValue.trim().split(' ')
 
-    searchValues.forEach((el, index) => {
-      if (index === 0) {
-        searchArr.push(
-          ...arr.filter(elem => {
+      searchValues.forEach((el, index) => {
+        if (index === 0) {
+          searchArr.push(
+            ...arr.filter(elem => {
+              return (
+                (elem.mark.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+                (elem.model.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
+                (elem.date.toString().slice(0, el.length) === el)
+              )
+            })
+          )
+        } else {
+          searchArr = searchArr.filter(elem => {
             return (
               (elem.mark.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
               (elem.model.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
               (elem.date.toString().slice(0, el.length) === el)
             )
           })
-        )
-      } else {
-        searchArr = searchArr.filter(elem => {
-          return (
-            (elem.mark.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
-            (elem.model.toLowerCase().slice(0, el.length) === el.toLowerCase()) ||
-            (elem.date.toString().slice(0, el.length) === el)
-          )
-        })
-      }
-    })
+        }
+      })
 
-    setFilteredData(searchArr);
-    if (!searchValue) searchArr = []
+      setFilteredData(searchArr);
+      if (!searchValue) searchArr = []
+    }
   }, [searchValue])
 
   useEffect(() => {
@@ -167,7 +169,7 @@ const App = () => {
           <Route path='/not' element={<NotFoundPage />} />
         </Routes>
       </div>
-      
+
       <Footer />
     </div>
   )

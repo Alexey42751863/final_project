@@ -110,6 +110,7 @@
     color: #1172B6;
 }
 .carsHeader .carsIcons .menu:hover{
+    /* cursor: pointer; */
     color: #FF5252;
 }
 .carsHeader .carsIcons .menu.selected {

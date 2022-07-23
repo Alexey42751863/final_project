@@ -1,0 +1,22 @@
+.carsList .carItems{
+    width: 100%;
+    max-width: 925px;
+    padding: 10px;
+}
+
+.carsList .carItems.flex{
+    box-sizing: border-box;
+    max-height: 490px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.carsList .carItems.flex a{
+    max-width: 20%;
+    box-sizing: border-box;
+}
+
+.carsList .carItems .carItem{
+    margin: 7px 5px 24px;
+}

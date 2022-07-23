@@ -1,0 +1,92 @@
+.CarsRow {
+    margin: 7px 0px 24px;
+    box-shadow: 0px 3px 8px rgb(180 184 189 / 15%);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.CarsRow:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CarsRow .row_content {
+    width: 80%;
+    padding: 0 18px 15px;
+}
+
+.CarsRow .row_content .row_title {
+    color: #1172b6;
+    line-height: 48px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.CarsRow .row_content .row_title:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.CarsRow .row_content .row_title .date {
+    line-height: 48px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #727272;
+    margin-right: 10px;
+}
+
+.CarsRow .row_content .about {
+    font-family: sans-serif;
+}
+
+.CarsRow .row_content .about span {
+    margin-right: 5px;
+}
+
+.CarsRow .row_content .about .dateNow {
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.CarsRow .row_content .about .country {
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #795548;
+}
+
+
+.CarsRow .row_content .about .clearance {
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #4CAF50;
+}
+
+.CarsRow .row_content .about .clearance.no {
+    color: red;
+}
+
+.CarsRow .row_price {
+    width: 20%;
+    padding: 6px 12px;
+    background-color: #fafbfc;
+    border: none;
+    border-left: 1px solid #f7f7f7;
+}
+
+.CarsRow .row_price span {
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1172b6;
+}

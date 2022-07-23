@@ -1,10 +1,10 @@
 .carsCard {
-    margin: 7px 10px 24px;
+    margin: 7px 0px 24px;
     box-shadow: 0px 3px 8px rgb(180 184 189 / 15%);
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
-    width: 98%; 
+    width: 100%; 
     overflow: hidden;
 }
 
@@ -67,7 +67,7 @@
 
 .carsCard .price p {
     font-size: 20px;
-    color: red;
+    color:#1172b6;
     text-transform: uppercase;
 }
 

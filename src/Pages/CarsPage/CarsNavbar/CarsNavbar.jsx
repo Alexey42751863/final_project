@@ -1,12 +1,11 @@
 import React from 'react'
 import LeftBar from './LeftBar'
-// import UpDown from './UpDown'
 import { FaRegTimesCircle } from 'react-icons/fa'
 import { BsSearch } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import LeftBarInputs from './LeftBarInputs'
 
-const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchValue, setSearchValue }) => {
+const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchValue, filteredData }) => {
 
     const [markCheck, setMarkCheck] = useState('')
     const [modelCheck, setModelCheck] = useState('')
@@ -28,24 +27,12 @@ const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchVa
     const [country] = useState(['Հայաստան', 'ԱՄՆ']);
     const [city, setCity] = useState([]);
 
-    // useEffect(() => {
-    //     setMarkCheck('')
-    //     setModelCheck('')
-    //     setCarBodyCheck('')
-    //     setMatorCheck('')
-    //     setGearboxCheck('')
-    //     setTugCheck('')
-    //     setSteeringWheelCheck('')
-    //     setCountryCheck('')
-    //     setCityCheck('')
-    // }, [searchValue])
-
     useEffect(() => {
         markCheck ? setModel([...handleSelectMark('mark', markCheck)]) : setModel([])
         countryCheck ? setCity([...handleSelectCountry('country', countryCheck)]) : setCity([])
     }, [markCheck, countryCheck])
 
-    useEffect(() => {        
+    useEffect(() => {
         filterOptions.mark && setMarkCheck(filterOptions.mark)
         filterOptions.model && setModelCheck(filterOptions.model)
         filterOptions.carBody && setCarBodyCheck(filterOptions.carBody)
@@ -56,13 +43,13 @@ const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchVa
         filterOptions.country && setCountryCheck(filterOptions.country)
         filterOptions.city && setCityCheck(filterOptions.city)
     }, [
-        filterOptions.mark, 
-        filterOptions.model, 
-        filterOptions.carBody, 
-        filterOptions.mator, 
-        filterOptions.gearbox, 
-        filterOptions.tug, 
-        filterOptions.steeringWheel, 
+        filterOptions.mark,
+        filterOptions.model,
+        filterOptions.carBody,
+        filterOptions.mator,
+        filterOptions.gearbox,
+        filterOptions.tug,
+        filterOptions.steeringWheel,
         filterOptions.country,
         filterOptions.city,
         searchValue
@@ -79,7 +66,6 @@ const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchVa
     }
 
     const handleChange = (value, key) => {
-        setSearchValue('')
 
         if (filterOptions[key] === value) {
             setFilterOptions(filterOptions, filterOptions[key] = '')
@@ -99,8 +85,14 @@ const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchVa
         filtering()
     }
 
+    const cleanOptions = () => {
+        window.location.reload()
+        setFilterOptions({})        
+        filtering()
+    }
+
     return (
-        <nav className='carsNavbar'>
+        <nav className='carsNavbar' >
             <LeftBar title={'Մակնիշը'} id={'mark'} list={mark} filterOption={markCheck} handleChange={handleChange} />
             {model.length !== 0 && <LeftBar
                 title={markCheck}
@@ -142,8 +134,11 @@ const CarsNavbar = ({ cars, filterOptions, setFilterOptions, filtering, searchVa
                 filterOption={cityCheck}
                 handleChange={handleChange}
             />}
-            <div className='findClose'>
-                <span className='findSpan'> <BsSearch /> loop</span> <span className='closeSpan'><FaRegTimesCircle /></span>
+            <div className='findClose' >
+                <span className='findSpan' > <BsSearch /> {filteredData.length} </span>
+                <span className='closeSpan' >
+                    <FaRegTimesCircle onClick={cleanOptions}/>
+                </span>
             </div>
         </nav>
     )

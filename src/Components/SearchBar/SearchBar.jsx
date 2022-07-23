@@ -28,6 +28,15 @@ const SearchBar = ({ searchValue, setSearchValue, filteredData, handleClickSearc
     return random
   }
 
+  const handleSearchItemClick =(e) => {
+    setSearchValue(e.target.outerText)
+    setTimeout(() => {
+      setIsOpen(false)
+      setSearchValue('')
+    }, 0)
+    handleClickSearchItem(e)
+  }
+
   return (
     <div className='searchBar'>
       <form >
@@ -56,15 +65,7 @@ const SearchBar = ({ searchValue, setSearchValue, filteredData, handleClickSearc
             <div
               className='search_item'
               key={index}
-              onClick={
-                (e) => {
-                  setSearchValue(e.target.outerText)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 0)
-                  handleClickSearchItem(e)
-                }
-              }
+              onClick={handleSearchItemClick}
             >
               {el}
             </div>
