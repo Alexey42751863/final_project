@@ -71,7 +71,7 @@
 }
 .TitlePage .price .pricelist{
     position: absolute;
-    top: 0;
+    top: 50px;
     font-size: 25px;
     width: 170px;
     height: 170px;
@@ -87,7 +87,7 @@
     display: block;
 }
 .TitlePage .price .pricelist .prices{
-    padding: 5px;
+   margin: 5px;
     border-radius: 3px;
 }
 .TitlePage .price .pricelist .active{
