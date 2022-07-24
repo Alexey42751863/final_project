@@ -16,8 +16,8 @@ const Fullscreen = ({car,closeFullscreen}) => {
                                 <div className='productDate'>{car.date}</div>
                                 <div className='markModelInfo'>{car.mark}</div>
                                 <div className='markModelInfo'>{car.model}</div>
-                            </div>
-                            <div className='priceInfo'>{car.priceDolor} $</div>
+                            </div>  
+                            <div className='priceInfo'>{car.priceDollar} $</div>
                         </div>
                         <div className='addInfo'>
                             <span className="customs">

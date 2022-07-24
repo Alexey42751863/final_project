@@ -21,7 +21,9 @@ const TitlePage = ({ car }) => {
         let year = date.getFullYear()
         return (day + '.' + month + '.' + year)
     }
-
+    const onClick=(e)=>{
+       document.querySelector('.mainPrice').innerText = (e.target.innerText);
+    }
     return (
         <div className="TitlePage">
             <div className="mainInfo">
@@ -48,8 +50,8 @@ const TitlePage = ({ car }) => {
                 </div> 
             </div>
             <div className="price" onMouseOver={mouseOverPrice} onMouseLeave={mouseLeaveFromPrice}>
-              {car.priceDollar?  car.priceDollar+ ' $':car.priceDram}
-                <div className="pricelist" >
+              <div className='mainPrice'>{car.priceDollar?  car.priceDollar+ ' $':car.priceDram}</div>
+                <div className="pricelist" onClick={onClick}>
                     <div className="prices dol">{car.priceDollar} $</div>
                     <div className="prices">{car.priceDram} ֏</div>
                     <div className="prices">{car.priceEuro} €</div>
