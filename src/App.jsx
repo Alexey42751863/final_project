@@ -166,7 +166,7 @@ const App = () => {
               sorting={sorting}
             />}
           />
-          <Route path='/not' element={<NotFoundPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </div>
 
